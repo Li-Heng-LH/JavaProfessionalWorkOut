@@ -16,7 +16,7 @@ public class CopyBytes {
             in = new FileInputStream("src/main/resources/xanadu.txt");
             out = new FileOutputStream("out/out.txt"); //out directory has to be present
 
-            int c; //Can I use Byte???
+            int c;
             while ((c = in.read()) != -1) {
                 out.write(c);
             }
@@ -31,3 +31,8 @@ public class CopyBytes {
 
     }
 }
+
+//words of caution:
+//Byte stream is low-level I/O that you should avoid
+//Byte streams should only be used for the most primitive I/O
+//Since xanadu.txt contains character data, the best approach is to use character streams
