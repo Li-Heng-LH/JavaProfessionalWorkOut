@@ -5,7 +5,7 @@
 &nbsp;
 
 ### Some Learning Notes ###
-* [Java I/O](/JavaIO/README.md)
+* [Java I/O](/javaIO/README.md)
 
 
 &nbsp;
