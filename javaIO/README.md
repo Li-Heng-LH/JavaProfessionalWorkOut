@@ -1,5 +1,5 @@
 # JavaIO
-* Work out examples while studying for Java Professional Cert. 
+Work out examples while studying for Java Professional Cert. 
 
 
 &nbsp;
