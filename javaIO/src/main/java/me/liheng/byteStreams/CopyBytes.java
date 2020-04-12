@@ -9,6 +9,7 @@ public class CopyBytes {
     public static void main(String[] args) throws IOException {
         FileInputStream in = null;
         FileOutputStream out = null;
+        int numberOfReads = 0;
 
         //try...finally block is used here
         //because closure of streams has to be done
@@ -17,9 +18,11 @@ public class CopyBytes {
             out = new FileOutputStream("out/out.txt"); //out directory has to be present
 
             int c;
+
             while ((c = in.read()) != -1) {
 
                 System.out.println(c);
+                numberOfReads++;
 
                 out.write(c);
             }
@@ -30,6 +33,7 @@ public class CopyBytes {
             if (out != null) {
                 out.close();
             }
+            System.out.println("numberOfReads: " + numberOfReads);
         }
 
     }

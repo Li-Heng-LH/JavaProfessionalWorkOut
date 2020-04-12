@@ -58,7 +58,10 @@ If want to append only: use FileOutputStream(String name, boolean append) constr
   2. An InputStreamReader is a **bridge** from **byte streams to character streams**: It reads bytes and decodes them into characters using a specified charset.
   Therefore it can be constructed by passing in InputStream. 
   3. FileReader is a **convenience class** for reading character files. It can be instantiated by passing in file name. 
-  3. InputStreamReader can handle all input streams, not just files. 
+  3. InputStreamReader can handle all input streams, not just files.  
+* Difference between InputStream.read() vs InputStreamReader.read():
+  1. InputStream.read(): 165 reads; InputStreamReader.read(): 155 reads
+  2. InputStream.read(): Chinese characters byte by byte;  InputStreamReader.read(): Chinese characters character by character. 
 &nbsp;
 
 &nbsp;

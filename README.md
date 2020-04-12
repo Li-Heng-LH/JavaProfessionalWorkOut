@@ -2,7 +2,6 @@
 Work out examples while studying for Java Professional Cert. 
 
 &nbsp;
-----
 
 ### Some Learning Notes ###
 * [Java I/O](/javaIO/README.md)
