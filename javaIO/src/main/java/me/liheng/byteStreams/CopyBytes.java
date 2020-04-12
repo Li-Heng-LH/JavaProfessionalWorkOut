@@ -18,6 +18,9 @@ public class CopyBytes {
 
             int c;
             while ((c = in.read()) != -1) {
+
+                System.out.println(c);
+
                 out.write(c);
             }
         } finally {

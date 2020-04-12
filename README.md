@@ -43,6 +43,22 @@ If want to append only: use FileOutputStream(String name, boolean append) constr
 ##### Character Stream #####
 * Byte stream is low-level I/O. Byte streams should only be used for the most primitive I/O.
 * If a file contains character data, the best approach is to use character streams. 
+* Unicode: a character is represented as a **code point**. 
+* Unicode can be implemented by different character encodings. 
+* UTF-8 is a popular one among them. 
+* UTF-8 uses one byte for the first 128 code points, and up to 4 bytes for other characters. 
+* The first 128 Unicode code points represent the ASCII characters, which means that any ASCII text is also a UTF-8 text.
+* **Top level: abstract class Reader**  
+* Java uses Unicode. Reader and Writer can convert between Unicode and system encoding. 
+* Some notable Readers: InputStreamReader, BufferedReader, FileReader(extends InputStreamReader)
+* **Top level: abstract class Writer**
+* Some notable Writers: OutputStreamWriter, BufferedWriter, FileWriter(extends OutputStreamWriter), PrintWriter
+* InputStreamReader V.S FileReader:
+  1. A FileReader is an InputStreamReader
+  2. An InputStreamReader is a **bridge** from **byte streams to character streams**: It reads bytes and decodes them into characters using a specified charset.
+  Therefore it can be constructed by passing in InputStream. 
+  3. FileReader is a **convenience class** for reading character files. It can be instantiated by passing in file name. 
+  3. InputStreamReader can handle all input streams, not just files. 
 &nbsp;
 
 &nbsp;
