@@ -4,15 +4,15 @@ Work out examples while studying for Java Professional Cert.
 
 &nbsp;
 
-### Some Learning Notes ###
+## Some Learning Notes ##
 
-#### Java I/O ####
+### Java I/O ###
 * **A stream is a sequence of data**.
 * The data source and data destination can be anything that holds, generates, or consumes data.  
 It can be disk files, another program, a peripheral device, a network socket, or an array.
 &nbsp;
 
-##### Byte Stream #####
+#### Byte Stream: InputStream ####
 * **Top level: abstract class InputStream**  
 abstract int read() --> Reads the next byte  
 int	read (byte[] b) --> Reads some number of bytes from the input stream and stores them into the buffer array b.  
@@ -25,6 +25,9 @@ int	read (byte[] b) --> Reads some number of bytes from the input stream and sto
 * void flush(): forces any buffered output bytes to be written out.   
 flush() of OutputStream does nothing.  
 Buffer children override it. 
+
+&nbsp;
+#### Byte Stream: FileInputStream ####
 * class **FileInputStream** extends InputStream  
 It is file I/O byte stream
 * Read: returns the next byte it reads.   
@@ -38,9 +41,9 @@ completely.
 * Will create file if file does not exist.  
 By default will override the file.   
 If want to append only: use FileOutputStream(String name, boolean append) constructor. 
-&nbsp;
 
-##### Character Stream #####
+&nbsp;
+#### Character Stream ####
 * Byte stream is low-level I/O. Byte streams should only be used for the most primitive I/O.
 * If a file contains character data, the best approach is to use character streams. 
 * Unicode: a character is represented as a **code point**. 
@@ -53,6 +56,9 @@ If want to append only: use FileOutputStream(String name, boolean append) constr
 * Some notable Readers: InputStreamReader, BufferedReader, FileReader(extends InputStreamReader)
 * **Top level: abstract class Writer**
 * Some notable Writers: OutputStreamWriter, BufferedWriter, FileWriter(extends OutputStreamWriter), PrintWriter
+
+&nbsp;
+#### Character Stream: InputStreamReader, FileReader ####
 * InputStreamReader V.S FileReader:
   1. A FileReader is an InputStreamReader
   2. An InputStreamReader is a **bridge** from **byte streams to character streams**: It reads bytes and decodes them into characters using a specified charset.
