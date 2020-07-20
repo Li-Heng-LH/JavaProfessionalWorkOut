@@ -10,9 +10,9 @@ Work out examples while studying for Java Professional Cert.
 * **A stream is a sequence of data**.
 * The data source and data destination can be anything that holds, generates, or consumes data.  
 It can be disk files, another program, a peripheral device, a network socket, or an array.
-&nbsp;
 
-#### Byte Stream: InputStream ####
+&nbsp;
+#### Byte Stream: InputStream, OutputStream ####
 * **Top level: abstract class InputStream**  
 abstract int read() --> Reads the next byte  
 int	read (byte[] b) --> Reads some number of bytes from the input stream and stores them into the buffer array b.  
@@ -27,7 +27,7 @@ flush() of OutputStream does nothing.
 Buffer children override it. 
 
 &nbsp;
-#### Byte Stream: FileInputStream ####
+#### Byte Stream: FileInputStream, FileOutputStream ####
 * class **FileInputStream** extends InputStream  
 It is file I/O byte stream
 * Read: returns the next byte it reads.   
@@ -43,7 +43,7 @@ By default will override the file.
 If want to append only: use FileOutputStream(String name, boolean append) constructor. 
 
 &nbsp;
-#### Character Stream ####
+#### Character Stream: Reader, Writer ####
 * Byte stream is low-level I/O. Byte streams should only be used for the most primitive I/O.
 * If a file contains character data, the best approach is to use character streams. 
 * Unicode: a character is represented as a **code point**. 
@@ -52,7 +52,7 @@ If want to append only: use FileOutputStream(String name, boolean append) constr
 * UTF-8 uses one byte for the first 128 code points, and up to 4 bytes for other characters. 
 * The first 128 Unicode code points represent the ASCII characters, which means that any ASCII text is also a UTF-8 text.
 * **Top level: abstract class Reader**  
-* Java uses Unicode. Reader and Writer can convert between Unicode and system encoding. 
+* Java uses Unicode. **Reader and Writer can convert between Unicode and system encoding.** 
 * Some notable Readers: InputStreamReader, BufferedReader, FileReader(extends InputStreamReader)
 * **Top level: abstract class Writer**
 * Some notable Writers: OutputStreamWriter, BufferedWriter, FileWriter(extends OutputStreamWriter), PrintWriter
@@ -68,6 +68,14 @@ If want to append only: use FileOutputStream(String name, boolean append) constr
 * Difference between InputStream.read() vs InputStreamReader.read():
   1. InputStream.read(): 165 reads; InputStreamReader.read(): 155 reads
   2. InputStream.read(): Chinese characters byte by byte;  InputStreamReader.read(): Chinese characters character by character. 
+
+&nbsp;
+
+#### Character Streams that Use Byte Streams ####
+* Character streams are often "wrappers" for byte streams. 
+* The character stream uses the byte stream to perform the physical I/O, while the character stream handles translation between characters and bytes.
+* FileReader, for example, uses FileInputStream, while FileWriter uses FileOutputStream. 
+
 &nbsp;
 
 &nbsp;
