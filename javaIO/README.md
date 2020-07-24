@@ -78,6 +78,12 @@ If want to append only: use FileOutputStream(String name, boolean append) constr
 
 &nbsp;
 
+#### Buffered Streams ####
+* A program can convert an unbuffered stream into a buffered stream using the **wrapping** idiom. 
+* Can be used to support line-oriented I/O. 
+
+&nbsp;
+
 &nbsp;
 ----
 ### Useful links ###
