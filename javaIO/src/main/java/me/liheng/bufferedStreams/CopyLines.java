@@ -13,8 +13,8 @@ public class CopyLines {
         PrintWriter outputStream = null;
 
         try {
-            inputStream = new BufferedReader(new FileReader("src/main/resources/xanadu.txt"));
-            outputStream = new PrintWriter(new FileWriter("out/out.txt"));
+            inputStream = new BufferedReader(new FileReader("src/main/resources/xanadu.txt")); //relative path
+            outputStream = new PrintWriter(new FileWriter("out/out.txt")); //relative path
 
             String line;
             while ((line = inputStream.readLine()) != null) {

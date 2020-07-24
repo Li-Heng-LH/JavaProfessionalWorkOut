@@ -14,7 +14,7 @@ public class CopyBytes {
         //try...finally block is used here
         //because closure of streams has to be done
         try {
-            in = new FileInputStream("src/main/resources/xanadu.txt");
+            in = new FileInputStream("src/main/resources/xanadu.txt"); //relative path
             out = new FileOutputStream("out/out.txt"); //out directory has to be present
 
             int c;

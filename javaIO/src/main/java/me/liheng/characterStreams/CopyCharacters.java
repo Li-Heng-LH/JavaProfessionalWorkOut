@@ -12,8 +12,8 @@ public class CopyCharacters {
         int numberOfReads = 0;
 
         try {
-            inputStream = new FileReader("src/main/resources/xanadu.txt");
-            outputStream = new FileWriter("out/out.txt");
+            inputStream = new FileReader("src/main/resources/xanadu.txt"); //relative path
+            outputStream = new FileWriter("out/out.txt"); //relative path
 
             //in CopyCharacters, the int variable holds a character value in its last 16 bits;
             //in CopyBytes, the int variable holds a byte value in its last 8 bits.
