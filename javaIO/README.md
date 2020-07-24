@@ -84,6 +84,13 @@ If want to append only: use FileOutputStream(String name, boolean append) constr
 
 &nbsp;
 
+#### Path ####
+* A Path is not system independent, i.e., it is system dependent. 
+* You cannot compare a Path from a Solaris file system and expect it to match a Path from a Windows file system. 
+* 
+
+&nbsp;
+
 &nbsp;
 ----
 ### Useful links ###
