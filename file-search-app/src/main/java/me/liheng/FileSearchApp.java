@@ -1,5 +1,10 @@
 package me.liheng;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 public class FileSearchApp {
 
     String path;
@@ -7,7 +12,32 @@ public class FileSearchApp {
     String zipFileName;
 
     public static void main( String[] args ) {
+        FileSearchApp app = new FileSearchApp();
 
+        switch(Math.min(args.length, 3)) { //either 0, 1, 2, or 3
+            case 0:
+                System.out.println("USAGE: FileSearchApp path [regex] [zipfile]");
+                return;
+            case 3: app.setZipFileName(args[2]);
+            case 2: app.setRegex(args[1]);
+            case 1: app.setPath(args[0]); // Making use of switch fall through
+        }
+
+        try {
+            app.walkDirectory(app.getPath());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    private void walkDirectory(String path) throws IOException {
+        Files.walk(Paths.get(path))
+                .forEach(f -> processFile(f.toFile()));
+    }
+
+    public void processFile(File file) {
+        System.out.println("Processing file: " + file);
     }
 
     public String getPath() {

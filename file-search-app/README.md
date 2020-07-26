@@ -6,7 +6,8 @@ This is a Command-Line Application That Searches Text Files.
 
 ## Some Learning Notes ##
 
-### Java I/O ###
+### Application Design ###
+* Keep main method simple. It is just bootstrap to launch the app. 
 
 &nbsp;
 
