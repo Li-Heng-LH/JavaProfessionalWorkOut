@@ -2,6 +2,7 @@ package me.liheng;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.UncheckedIOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
@@ -31,13 +32,33 @@ public class FileSearchApp {
 
     }
 
-    private void walkDirectory(String path) throws IOException {
+    // Get to all files in the directory
+    public void walkDirectory(String path) throws IOException {
         Files.walk(Paths.get(path))
                 .forEach(f -> processFile(f.toFile()));
     }
 
-    public void processFile(File file) {
-        System.out.println("Processing file: " + file);
+    private void processFile(File file) {
+        try {
+            if (fileContainsRegex(file)) {
+                addFileToZip(file);
+            }
+        } catch (IOException | UncheckedIOException e) {
+            System.out.println("Error processing file: " + file + " : " + e);
+        }
+    }
+
+    private boolean fileContainsRegex(File file) throws IOException {
+        return Files.lines(file.toPath())
+                .allMatch(line -> lineContainsRegex(line)); // short-circuit evaluation
+    }
+
+    private boolean lineContainsRegex(String line) {
+        return true;
+    }
+
+    private void addFileToZip(File file) {
+        System.out.println("Adding to zip: " + file);
     }
 
     public String getPath() {
