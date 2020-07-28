@@ -5,12 +5,14 @@ import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.regex.Pattern;
 
 public class FileSearchApp {
 
     String path;
     String regex;
     String zipFileName;
+    Pattern pattern;
 
     public static void main( String[] args ) {
         FileSearchApp app = new FileSearchApp();
@@ -54,7 +56,7 @@ public class FileSearchApp {
     }
 
     private boolean lineContainsRegex(String line) {
-        return true;
+        return this.getRegex() == null || this.pattern.matcher(line).find();
     }
 
     private void addFileToZip(File file) {
@@ -75,6 +77,7 @@ public class FileSearchApp {
 
     public void setRegex(String regex) {
         this.regex = regex;
+        this.pattern = Pattern.compile(regex); // More efficient. Can keep reusing this compiled pattern.
     }
 
     public String getZipFileName() {
