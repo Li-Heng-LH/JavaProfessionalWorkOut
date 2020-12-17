@@ -62,6 +62,12 @@ before applying an explicit cast.
 
 &nbsp;
 
+### Virtual Method Invocation ###
+* Call a method based on the actual type at runtime, instead of variable type at compile time. 
+* But for instance variables, actual type at runtime is not considered. 
+
+&nbsp;
+
 
 &nbsp;
 ----
