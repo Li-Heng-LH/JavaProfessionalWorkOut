@@ -54,8 +54,14 @@ Walk through of _Oracle Certified Professional Java SE 8 Programmer II Study Gui
   * is true unless x is null 
   * null is not an Object
   * `null instanceof Object` is false 
+* The compilation check only applies when instanceof is called on a class.
+* When checking whether an object is an instanceof an interface, Java waits until runtime to do the check.
+* The reason is that a subclass could implement that interface and the compiler wouldn’t know it.
+* The instanceof operator is commonly used to determine if an instance is a subclass of a particular object 
+before applying an explicit cast. 
 
 &nbsp;
+
 
 &nbsp;
 ----

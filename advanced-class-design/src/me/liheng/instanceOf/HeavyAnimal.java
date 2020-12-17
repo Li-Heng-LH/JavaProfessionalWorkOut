@@ -25,12 +25,21 @@ public class HeavyAnimal {
         because the compiler knows that
         there is no possible way for a Hippo variable reference to be an Elephant.
          */
+
+
+        boolean b5 = hippo2 instanceof Mother;
+        /* Explanation
+        Runtime check for interface.
+        The reason is that a subclass could implement that interface and the compiler wouldn’t know it.
+         */
     }
 }
 
 
-class Hippo extends HeavyAnimal {
-}
+class Hippo extends HeavyAnimal {}
 
-class Elephant extends HeavyAnimal {
-}
+class Elephant extends HeavyAnimal {}
+
+interface Mother {}
+
+class MotherHippo extends Hippo implements Mother {}
