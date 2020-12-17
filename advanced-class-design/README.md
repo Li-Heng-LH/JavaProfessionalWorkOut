@@ -68,6 +68,14 @@ before applying an explicit cast.
 
 &nbsp;
 
+### @Override ###
+For: 
+* Implementing a method from an interface
+* Overriding a superclass method
+* Overriding a method declared in Object, such as hashCode, equals, or toString
+
+&nbsp;
+
 
 &nbsp;
 ----
