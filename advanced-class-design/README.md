@@ -45,6 +45,18 @@ Walk through of _Oracle Certified Professional Java SE 8 Programmer II Study Gui
 
 &nbsp;
 
+### instanceof ###
+* true if :   
+  * is instance of class
+  * is a subclass (directly or indirectly)
+  * implements the interface
+* `x instanceof Object`
+  * is true unless x is null 
+  * null is not an Object
+  * `null instanceof Object` is false 
+
+&nbsp;
+
 &nbsp;
 ----
 ### Useful links ###
