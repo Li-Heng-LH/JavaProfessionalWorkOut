@@ -76,6 +76,17 @@ For:
 
 &nbsp;
 
+### toString() ###
+* `public String toString()`
+* Object implementation: someObjectClassname@hashcodenumber
+
+&nbsp;
+
+### equals() ###
+* `public boolean equals(Object obj)`
+* Object implementation: ==
+
+&nbsp;
 
 &nbsp;
 ----
