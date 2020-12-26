@@ -94,6 +94,12 @@ For:
 ### equals() ###
 * `public boolean equals(Object obj)`
 * Object implementation: ==
+* Contracts for equals():   
+  * reflexive: x.equals(x) should return true
+  * symmetric: x.equals(y) --> y.equals(x) and y.equals(x) --> x.equals(y)
+  * transitive: x.equals(y) and y.equals(z), --> x.equals(z)
+  * consistent
+  * x.equals(null) should return false, rather than throw a NullPointerException
 
 &nbsp;
 
