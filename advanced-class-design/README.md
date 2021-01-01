@@ -86,14 +86,14 @@ For:
 &nbsp;
 
 ### toString() ###
-* `public String toString()`
-* Object implementation: someObjectClassname@hashcodenumber
+* Default implementation: someObjectClassname@hashcodenumber
+* To override: `public String toString()`
 
 &nbsp;
 
 ### equals() ###
-* `public boolean equals(Object obj)`
-* Object implementation: ==
+* Default implementation: ==
+* To override: `public boolean equals(Object obj)`
 * Contracts for equals():   
   * reflexive: x.equals(x) should return true
   * symmetric: x.equals(y) --> y.equals(x) and y.equals(x) --> x.equals(y)
@@ -103,7 +103,15 @@ For:
 
 &nbsp;
 
+### hashCode ###
+* Default implementation: typically implemented by converting the internal address of the object into an integer.   
+  As much as is reasonably practical, the hashCode method defined by class Object does return distinct integers for distinct objects. 
+* To override:`public int hashCode()`
+
+&nbsp;
+
 &nbsp;
 ----
 ### Useful links ###
 * [What is null in Java?](https://stackoverflow.com/questions/2707322/what-is-null-in-java)
+* [How default .equals and .hashCode will work for my classes?](https://stackoverflow.com/questions/4178997/how-default-equals-and-hashcode-will-work-for-my-classes)
