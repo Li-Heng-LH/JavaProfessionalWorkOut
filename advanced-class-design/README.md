@@ -107,6 +107,14 @@ For:
 * Default implementation: typically implemented by converting the internal address of the object into an integer.   
   As much as is reasonably practical, the hashCode method defined by class Object does return distinct integers for distinct objects. 
 * To override:`public int hashCode()`
+* Contracts for hashCode(): 
+  * Within the same program, the result of hashCode() must not change.   
+    For example, an attribute that can change (e.g weight) should not be used for hashcode.
+  * a equals b --> both have same hashcode. 
+  * a has same hashcode as b !--> a equals b  
+    a !equals b --> a and b can still have the same hashcode. 
+    So, this is the collision case. 
+* hashCode() can use a subset of the variables that equals() uses.
 
 &nbsp;
 

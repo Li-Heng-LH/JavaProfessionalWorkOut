@@ -10,3 +10,9 @@
   For Overriding, the return type must be the same or a subclass. 
   
 &nbsp;
+
+### Contract between equals and hashCode ###
+* a equals b --> both have same hashcode. 
+* Reverse is not true. And that is the case of collision. 
+
+&nbsp;
