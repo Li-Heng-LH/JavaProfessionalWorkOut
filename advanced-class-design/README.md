@@ -118,6 +118,12 @@ For:
 
 &nbsp;
 
+### Enum ###
+* An enum cannot be extended. The values in an enum are all that are allowed. 
+You cannot add more at runtime by extending the enum.
+
+&nbsp;
+
 &nbsp;
 ----
 ### Useful links ###
