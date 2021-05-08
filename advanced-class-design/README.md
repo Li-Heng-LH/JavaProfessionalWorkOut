@@ -124,6 +124,8 @@ You cannot add more at runtime by extending the enum.
 * We can assign a **state** to each enum.
 * The first time we ask for any of the enum values, Java constructs all of the enum values.
 * After that, Java just returns the already‐constructed enum values. 
+* The enum can have an abstract method. 
+This means that each and every enum value is required to implement this method.
 
 &nbsp;
 
