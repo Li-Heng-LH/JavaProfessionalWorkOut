@@ -121,6 +121,9 @@ For:
 ### Enum ###
 * An enum cannot be extended. The values in an enum are all that are allowed. 
 You cannot add more at runtime by extending the enum.
+* We can assign a **state** to each enum.
+* The first time we ask for any of the enum values, Java constructs all of the enum values.
+* After that, Java just returns the already‐constructed enum values. 
 
 &nbsp;
 
