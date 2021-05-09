@@ -129,6 +129,18 @@ This means that each and every enum value is required to implement this method.
 
 &nbsp;
 
+### Member Inner Class ###
+* Defined at the member level of a class. 
+* **Can access members of the outer class including private members**. 
+* Cannot declare static fields or methods.
+* Since a member inner class is not static, it has to be used with an instance of the outer class. 
+* Compiling the Outer.java file will create 2 class files: 
+  * Outer.class
+  * Outer$Inner.class
+* 
+
+&nbsp;
+
 &nbsp;
 ----
 ### Useful links ###
