@@ -137,7 +137,7 @@ This means that each and every enum value is required to implement this method.
 * Compiling the Outer.java file will create 2 class files: 
   * Outer.class
   * Outer$Inner.class
-* 
+* If Inner class is private, in Test, calling Outer.Inner will have error. 
 
 &nbsp;
 
