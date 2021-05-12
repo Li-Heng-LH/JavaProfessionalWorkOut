@@ -1,4 +1,4 @@
-package me.liheng.innerClass;
+package me.liheng.memberInnerClass;
 
 // Member Inner Classes can be nested
 // There is a special way of calling 'this' to say which class you want to access

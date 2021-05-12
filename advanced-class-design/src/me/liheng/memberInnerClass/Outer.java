@@ -1,4 +1,4 @@
-package me.liheng.innerClass;
+package me.liheng.memberInnerClass;
 
 // Member Inner Class
 // a complicated way to print “Hi” three times

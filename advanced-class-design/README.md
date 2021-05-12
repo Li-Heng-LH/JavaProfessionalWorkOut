@@ -133,11 +133,18 @@ This means that each and every enum value is required to implement this method.
 * Defined at the member level of a class. 
 * **Can access members of the outer class including private members**. 
 * Cannot declare static fields or methods.
-* Since a member inner class is not static, it has to be used with an instance of the outer class. 
+* Since a member inner class is not static, it has to be **used with an instance of the outer class**. 
 * Compiling the Outer.java file will create 2 class files: 
   * Outer.class
   * Outer$Inner.class
 * If Inner class is private, in Test, calling Outer.Inner will have error. 
+
+&nbsp;
+
+### Local Inner Class ###
+* Defined within a method.
+* Cannot access local variables of a method unless they are effectively final. 
+* If the local variable is final, Java can pass it to inner class. 
 
 &nbsp;
 
