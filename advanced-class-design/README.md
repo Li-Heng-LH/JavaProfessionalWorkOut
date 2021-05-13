@@ -148,6 +148,14 @@ This means that each and every enum value is required to implement this method.
 
 &nbsp;
 
+### Anonymous Inner Class ###
+* Basically a local inner class that does not have a name.
+* It is declared and instantiated all in one statement. 
+* **Must extend an existing class or implement an existing interface**. 
+* Useful for a short implementation that is only used once. 
+
+&nbsp;
+
 &nbsp;
 ----
 ### Useful links ###
