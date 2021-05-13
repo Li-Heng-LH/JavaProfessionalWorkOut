@@ -2,13 +2,13 @@ package me.liheng.anonymousInnerClass;
 
 public class AnonInner {
 
-    abstract class SaleTodayOnly {
-        abstract int dollarsOff();
+    interface SaleTodayOnly {
+        int dollarsOff();
     }
 
     public int admission(int basePrice) {
         SaleTodayOnly saleTodayOnly = new SaleTodayOnly() {
-            int dollarsOff() {
+            public int dollarsOff() {
                 return 5;
             }
         };
