@@ -153,6 +153,9 @@ This means that each and every enum value is required to implement this method.
 * It is declared and instantiated all in one statement. 
 * **Must extend an existing class or implement an existing interface**. 
 * Useful for a short implementation that is only used once. 
+* It can be passed in as an argument to a method. 
+* Anonymous Inner Class 必须 extend or implement. 然后我们
+* **当场 define, 当场 instantiate**. 
 
 &nbsp;
 
