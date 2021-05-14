@@ -159,6 +159,13 @@ This means that each and every enum value is required to implement this method.
 
 &nbsp;
 
+### Static Nested Class ###
+* is not an inner class.
+* is a static class defined at the member level.
+* can be instantiated without an object of the enclosing class.
+
+&nbsp;
+
 &nbsp;
 ----
 ### Useful links ###
