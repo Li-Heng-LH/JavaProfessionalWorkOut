@@ -5,7 +5,16 @@ public class Enclosing {
     public int enclosingPrice = 9;
 
     static class Nested {
-        private int price = 6;
+        private int price = 5;
+        protected static int staticPrice = 8;
+
+        public void accessEnclosingClass() {
+            System.out.println(new Enclosing().enclosingPrice);    //Requires instance of enclosing class
+        }
+
+        public static void staticAccessEnclosingClass() {
+            System.out.println(new Enclosing().enclosingPrice);
+        }
     }
 
     public static void main(String[] args) {
@@ -14,6 +23,9 @@ public class Enclosing {
         Nested nested = new Nested();
 
         System.out.println(nested.price);
+        System.out.println(Nested.staticPrice);
+        nested.accessEnclosingClass();
+        Nested.staticAccessEnclosingClass();
         System.out.println(new Enclosing().enclosingPrice);
     }
 }

@@ -5,10 +5,14 @@ public class Outer {
 
     public void calculate() {
         final int width = 20; //has to be effectively final
+        String message = "Area is ";
 
         class Inner{
+            private int length = Outer.this.length; //Can access field of enclosing class
+
             public void multiply() {
-                System.out.println(length * width);
+                System.out.print(message);          //Can access effectively final local variable
+                System.out.println(length * width); //Can access effectively final local variable
             }
         }
 
