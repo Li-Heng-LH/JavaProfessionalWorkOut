@@ -167,12 +167,11 @@ This means that each and every enum value is required to implement this method.
 &nbsp;
 
 ### Summary of inner classes ###
-|                                                	| Member Inner Class 	| Local Inner Class 	| Anonymous Inner Class 	| Static Nested Class                  	|
-|------------------------------------------------	|--------------------	|-------------------	|-----------------------	|--------------------------------------	|
-| Can access instance members of enclosing class 	| Yes                	| Yes               	| Yes                   	| Requires instance of enclosing class 	|
-| Can access local variables of enclosing class  	| No                 	| Effectively final 	| Effectively final     	| No                                   	|
-| Can declare static fields or methods           	| No                 	| No                	| No                    	| Yes                                  	|
-
+|                                                	| Member Inner Class       	| Local Inner Class        	| Anonymous Inner Class    	| Static Nested Class                  	|
+|------------------------------------------------	|--------------------------	|--------------------------	|--------------------------	|--------------------------------------	|
+| Can access instance members of enclosing class 	| Yes, can directly access 	| Yes, can directly access 	| Yes, can directly access 	| Requires instance of enclosing class 	|
+| Can access local variables of enclosing class  	| No                       	| Effectively final        	| Effectively final        	| No                                   	|
+| Can declare static fields or methods           	| No                       	| No                       	| No                       	| Yes                                  	|
 &nbsp;
 
 &nbsp;

@@ -9,7 +9,7 @@ public class Outer {
         private int repeat = 3;
         public void go() {
             for (int i = 0; i < repeat; i++) {
-                System.out.println(greeting);
+                System.out.println(greeting);   //Can directly access field of enclosing class, even private
             }
         }
     }
