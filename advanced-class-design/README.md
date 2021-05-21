@@ -167,14 +167,15 @@ This means that each and every enum value is required to implement this method.
 &nbsp;
 
 ### Summary of inner classes ###
-|                                                	| Member Inner Class       	| Local Inner Class        	| Anonymous Inner Class    	| Static Nested Class                  	|
-|------------------------------------------------	|--------------------------	|--------------------------	|--------------------------	|--------------------------------------	|
+|                                                	|    Member Inner Class    	|     Local Inner Class    	|   Anonymous Inner Class  	|          Static Nested Class         	|
+|:----------------------------------------------:	|:------------------------:	|:------------------------:	|:------------------------:	|:------------------------------------:	|
 | Can access instance members of enclosing class 	| Yes, can directly access 	| Yes, can directly access 	| Yes, can directly access 	| Requires instance of enclosing class 	|
-| Can access local variables of enclosing class  	| No                       	| Effectively final        	| Effectively final        	| No                                   	|
-| Can declare static fields or methods           	| No                       	| No                       	| No                       	| Yes                                  	|
+| Can access local variables of enclosing class  	|            No            	|     Effectively final    	|     Effectively final    	|                  No                  	|
+| Can declare static fields or methods           	|            No            	|            No            	|            No            	|                  Yes                 	|
+| Allow access modifiers                         	|            Yes           	|    No, local to method   	|  No, local to statement  	|                  Yes                 	|
 &nbsp;
 
-### imports util class ###
+### import util class ###
 |              UtilClass.i             	|                       i                       	|
 |:------------------------------------:	|:---------------------------------------------:	|
 | import me.liheng.packageA.UtilClass; 	| import static me.liheng.packageA.UtilClass.*; 	|
@@ -182,6 +183,11 @@ This means that each and every enum value is required to implement this method.
 
 :x: import static me.liheng.packageA.UtilClass;  
 :x: import static me.liheng.packageA.*;
+
+&nbsp;
+
+### import member inner class ###
+* `import me.liheng.packageA.Outer.PublicInner;` is ok, but Outer will not be recognised. 
 
 &nbsp;
 
