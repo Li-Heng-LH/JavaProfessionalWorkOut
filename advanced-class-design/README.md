@@ -174,6 +174,17 @@ This means that each and every enum value is required to implement this method.
 | Can declare static fields or methods           	| No                       	| No                       	| No                       	| Yes                                  	|
 &nbsp;
 
+### imports util class ###
+|              UtilClass.i             	|                       i                       	|
+|:------------------------------------:	|:---------------------------------------------:	|
+| import me.liheng.packageA.UtilClass; 	| import static me.liheng.packageA.UtilClass.*; 	|
+|     import me.liheng.packageA.*;     	| import static me.liheng.packageA.UtilClass.i; 	|
+
+:x: import static me.liheng.packageA.UtilClass;  
+:x: import static me.liheng.packageA.*;
+
+&nbsp;
+
 &nbsp;
 ----
 ### Useful links ###
