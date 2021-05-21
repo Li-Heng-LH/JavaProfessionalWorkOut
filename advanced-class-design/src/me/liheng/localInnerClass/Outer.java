@@ -8,7 +8,7 @@ public class Outer {
         final int width = 20; //has to be effectively final
         String message = "Area is ";
 
-        class Inner{
+        class Inner {
             private int length = Outer.this.length; //Need Outer.this to prevent self reference
 
             public void multiply() {

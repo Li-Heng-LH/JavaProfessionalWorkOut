@@ -191,6 +191,15 @@ This means that each and every enum value is required to implement this method.
 
 &nbsp;
 
+### import static nested class ###
+* No need an instance of Enclosing class to instantiate.  
+Can just: `PublicInner publicInner = new PublicInner();`
+* Possible import statements: 
+  * `import me.liheng.packageA.Enclosing.PublicInner;`
+  * `import static me.liheng.packageA.Enclosing.PublicInner;`
+
+&nbsp;
+
 &nbsp;
 ----
 ### Useful links ###
