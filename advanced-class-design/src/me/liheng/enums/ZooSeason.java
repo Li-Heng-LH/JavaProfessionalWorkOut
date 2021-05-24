@@ -10,7 +10,7 @@ public enum ZooSeason {
 
     private String expectedVisitors;
 
-    private ZooSeason (String expectedVisitors) {
+    private ZooSeason (String expectedVisitors) {  // Enums are not allowed to have a public constructor
         this.expectedVisitors = expectedVisitors;
     }
 

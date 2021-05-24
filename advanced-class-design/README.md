@@ -41,7 +41,7 @@ Walk through of _Oracle Certified Professional Java SE 8 Programmer II Study Gui
   * Return type must be the same or a subclass
   * Access modifier must be the same or more accessible
   * Exceptions must be the same or subclass
-  * The methods must not be static
+  * The methods must not be static --> we cannot override static methods
 
 &nbsp;
 
@@ -100,6 +100,7 @@ For:
   * transitive: x.equals(y) and y.equals(z), --> x.equals(z)
   * consistent
   * x.equals(null) should return false, rather than throw a NullPointerException
+* An equals() method should have a **null check** and an **instanceof check**.
 
 &nbsp;
 
@@ -121,11 +122,15 @@ For:
 ### Enum ###
 * An enum cannot be extended. The values in an enum are all that are allowed. 
 You cannot add more at runtime by extending the enum.
+* Enums cannot have a public constructor.
 * We can assign a **state** to each enum.
 * The first time we ask for any of the enum values, Java constructs all of the enum values.
 * After that, Java just returns the already‐constructed enum values. 
 * The enum can have an abstract method. 
 This means that each and every enum value is required to implement this method.
+* We can actually do these things to enum: 
+  * assign a state
+  * implement abstract method or override a method
 
 &nbsp;
 

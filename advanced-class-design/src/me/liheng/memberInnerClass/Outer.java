@@ -5,7 +5,7 @@ package me.liheng.memberInnerClass;
 public class Outer {
     private String greeting = "Hi";
 
-    protected class Inner {
+    class Inner {
         private int repeat = 3;
         public void go() {
             for (int i = 0; i < repeat; i++) {
@@ -15,13 +15,15 @@ public class Outer {
     }
 
     public void callInner() {
-        Inner inner = new Inner();
+        Inner inner = new Inner();       //Note the different ways to instantiate Inner.
         inner.go();
     }
 
     public static void main(String[] args) {
         Outer outer = new Outer();
         outer.callInner();
+
+        Inner inner = outer.new Inner(); //Note the different ways to instantiate Inner.
     }
 }
 
