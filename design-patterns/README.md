@@ -19,6 +19,29 @@ Walk through of _Oracle Certified Professional Java SE 8 Programmer II Study Gui
 
 &nbsp;
 
+### Reference Type ###
+* If you use a variable to refer to an object, we can only call the reference type's methods/variables without explicit cast. 
+* Reference type determines which methods and variables are accessible to the Java program.
+
+&nbsp;
+
+### Casting ###
+* Casting an object from a subclass to a superclass doesn’t require an explicit cast
+* Casting an object from a superclass to a subclass requires an explicit cast.
+* The compiler will not allow casts to unrelated types. (not related in hierarchy)
+* Even when the code compiles without issue, an exception may be thrown at runtime if the object being cast is not actually an instance of that class.
+
+&nbsp;
+
+### Encapsulation ###
+* Methods operate on the data, rather than being accessed directly by users. 
+
+&nbsp;
+
+###  ###
+* 
+
+&nbsp;
 
 &nbsp;
 ----
