@@ -38,8 +38,13 @@ Walk through of _Oracle Certified Professional Java SE 8 Programmer II Study Gui
 
 &nbsp;
 
-###  ###
-* 
+### Singleton ###
+* That single instance has to be sharable by all classes and **threads** within the application. 
+* By marking the constructors private, we have implicitly marked the class **final**.  
+  A final class is a class that cannot be extended.  
+  The first line of any constructor is a call to a parent constructor with the super() command.  
+  If all of the constructors are declared private in the singleton class,  
+  it is impossible to create a subclass that can call parent class' constructor.
 
 &nbsp;
 
