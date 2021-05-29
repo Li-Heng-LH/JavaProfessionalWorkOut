@@ -5,7 +5,7 @@ public class HayStorage {
 
     private HayStorage() {} //By marking the constructors private, we have implicitly marked the class final.
 
-    private static final HayStorage instance = new HayStorage();
+    private static final HayStorage instance = new HayStorage(); //Note instance can be final, as it is initialised inline
 
     public static HayStorage getInstance() {
         return instance;

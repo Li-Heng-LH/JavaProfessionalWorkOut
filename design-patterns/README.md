@@ -45,6 +45,10 @@ Walk through of _Oracle Certified Professional Java SE 8 Programmer II Study Gui
   The first line of any constructor is a call to a parent constructor with the super() command.  
   If all of the constructors are declared private in the singleton class,  
   it is impossible to create a subclass that can call parent class' constructor.
+* Both the `StaffRegister` class and `HayStorage` class instantiate the singleton at the time the class is loaded.  
+  Conceptually, these two implementations are equivalent, since both create the singleton when the class is loaded. 
+  Since the singleton is created when the class is loaded, we are able to mark the reference `final`.  
+  By marking instance `final`, it cannot be reassigned, guarantees only one instance will be created within our application. 
 
 &nbsp;
 
