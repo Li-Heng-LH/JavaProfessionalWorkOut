@@ -7,9 +7,11 @@ public class VisitorTicketTracker {
 
     private VisitorTicketTracker() {}
 
-    public static VisitorTicketTracker getInstance() {
+    //synchronized : only one thread will be allowed in the method at a time,
+    //ensuring that only one object is created
+    public static synchronized VisitorTicketTracker getInstance() {
         if(instance == null) {
-            instance = new VisitorTicketTracker(); // NOT THREAD-SAFE!
+            instance = new VisitorTicketTracker();
         }
         return instance;
     }
