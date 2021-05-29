@@ -49,6 +49,7 @@ Walk through of _Oracle Certified Professional Java SE 8 Programmer II Study Gui
   Conceptually, these two implementations are equivalent, since both create the singleton when the class is loaded. 
   Since the singleton is created when the class is loaded, we are able to mark the reference `final`.  
   By marking instance `final`, it cannot be reassigned, guarantees only one instance will be created within our application. 
+* Software design pattern **lazy instantiation**: delay creation of the singleton until the first time the getInstance() method is called. 
 
 &nbsp;
 
