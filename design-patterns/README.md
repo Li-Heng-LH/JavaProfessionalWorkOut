@@ -22,6 +22,7 @@ Walk through of _Oracle Certified Professional Java SE 8 Programmer II Study Gui
 ### Reference Type ###
 * If you use a variable to refer to an object, we can only call the reference type's methods/variables without explicit cast. 
 * Reference type determines which methods and variables are accessible to the Java program.
+* The reference type is any class or interface that is a supertype of the actual type. 
 
 &nbsp;
 
@@ -89,7 +90,32 @@ either as a static inner class within the target class or within the same Java p
 * Factory patterns are often, although not always, implemented using static methods 
 that return objects and do not require a pointer to an instance of the factory class.
 * If we wanted to tighten our access control, we could have declared these constructors with default or package‐level access.
-* 
+
+&nbsp;
+
+### design principles VS design patterns ###
+* A design principle is an established idea or best practice that facilitates design process. 
+* A design pattern is an established general solution to a commonly occurring problem.
+
+&nbsp;
+
+### Interface ###
+* All members of an interface are public. 
+* Interfaces can never be declared final, as interfaces are assumed to be abstract, 
+and abstract and final can never be used together. 
+* Java supports multiple inheritance through interfaces only. 
+* A class can implement multiple interfaces,
+* An interface can extend multiple interfaces. 
+* Interface variables are public, static, and final by default, automatically inserted by the compiler. 
+* default and static methods need implementations. 
+* An abstract class can implement an interface without implementing any of the abstract methods.
+
+&nbsp;
+
+### inheritance VS object composition ###
+* Good about inheritance: Inheritance supports access to protected variables.
+* Good about composition: promote greater code reuse, since object composition tends to lead to classes that are 
+easier to reference, as they don’t require knowledge of any parent classes. 
 
 &nbsp;
 
