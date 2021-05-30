@@ -66,6 +66,24 @@ whose state does not change after they are created and can be easily shared acro
 
 &nbsp;
 
+### Builder Pattern ###
+* To create an object that requires numerous values to be set at the time the object is instantiated.
+* All parameters in constructor? Bad. 
+* A lot of setter methods?   
+  Doesn’t work for immutable objects.
+  For mutable objects, it could also lead to class invariants being temporarily broken.
+* Builder Pattern: parameters are passed to a builder object, 
+often through **method chaining**, and an object is generated with a final build call. 
+* Often used with immutable objects, since immutable objects do not have setter methods.
+* In some ways, using the builder pattern is analogous to taking a mutable object and making it read‐only.
+* In practice, a builder class is often packaged alongside its target class, 
+either as a static inner class within the target class or within the same Java package. 
+* One advantage of packing them together is that if one is changed, then the other can be quickly updated.
+* Another advantage is that writers of the target class can then choose to make the constructor a private or default.
+
+&nbsp;
+
+
 &nbsp;
 ----
 ### Useful links ###
