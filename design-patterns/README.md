@@ -101,12 +101,13 @@ that return objects and do not require a pointer to an instance of the factory c
 
 ### Interface ###
 * All members of an interface are public. 
-* Interfaces can never be declared final, as interfaces are assumed to be abstract, 
+* Interfaces can never be declared final, as interfaces are assumed to be declared as abstract, 
 and abstract and final can never be used together. 
 * Java supports multiple inheritance through interfaces only. 
 * A class can implement multiple interfaces,
 * An interface can extend multiple interfaces. 
 * Interface variables are public, static, and final by default, automatically inserted by the compiler. 
+* By default methods are public abstract.
 * default and static methods need implementations. 
 * An abstract class can implement an interface without implementing any of the abstract methods.
 

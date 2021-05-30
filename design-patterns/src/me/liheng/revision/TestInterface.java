@@ -1,8 +1,10 @@
 package me.liheng.revision;
 
-public interface TestInterface {
+public abstract interface TestInterface {  //By default it is declared abstract
 
     public static final int i = 9;  //By default instance is public static final.
+
+    public abstract void test(); //By default methods are public abstract.
 
     static int getInt() {
         return i;
