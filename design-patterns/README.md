@@ -83,6 +83,15 @@ either as a static inner class within the target class or within the same Java p
 
 &nbsp;
 
+### Factory Pattern ###
+* based on the idea of using a factory class to produce instances of objects based on a set of input parameters. 
+* It is similar to the builder pattern, although it is focused on supporting class polymorphism.
+* Factory patterns are often, although not always, implemented using static methods 
+that return objects and do not require a pointer to an instance of the factory class.
+* If we wanted to tighten our access control, we could have declared these constructors with default or package‐level access.
+* 
+
+&nbsp;
 
 &nbsp;
 ----
