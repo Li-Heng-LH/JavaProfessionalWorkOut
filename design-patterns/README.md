@@ -53,6 +53,19 @@ Walk through of _Oracle Certified Professional Java SE 8 Programmer II Study Gui
 
 &nbsp;
 
+### immutable object pattern ###
+* The immutable object pattern is a creational pattern based on the idea of creating objects 
+whose state does not change after they are created and can be easily shared across multiple classes.
+* no setter methods exist that modify the object
+* Immutable Strategy: 
+  * Use a constructor to set all properties of the object.
+  * Mark all of the instance variables private and final.
+  * Don’t define any setter methods.
+  * Don’t allow referenced mutable objects to be modified or accessed directly.
+  * Prevent methods from being overridden.
+
+&nbsp;
+
 &nbsp;
 ----
 ### Useful links ###
