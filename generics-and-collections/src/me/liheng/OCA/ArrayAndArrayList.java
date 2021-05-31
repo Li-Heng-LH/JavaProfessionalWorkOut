@@ -36,14 +36,14 @@ public class ArrayAndArrayList {
     }
 
 
-    public static void printArray(String [] arr) {
+    public static void printArray(Object [] arr) {
         for(int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
         System.out.println();
     }
 
-    public static void printList(List<String> list) {
+    private void printList(List<String> list) {
         for(int i = 0; i < list.size(); i++) {
             System.out.print(list.get(i) + " ");
         }
