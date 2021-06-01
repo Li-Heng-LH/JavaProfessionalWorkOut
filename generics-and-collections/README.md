@@ -18,6 +18,7 @@ if the **generic type is specified in the declaration**.
 &nbsp;
 
 ### Generic Class ###
+* **Using generics gives us compile time safety**.
 * `List names = new ArrayList();`  this is actually allowed. 
 * No need to specify the type.
 * Naming conventions: 
