@@ -32,7 +32,7 @@ if the **generic type is specified in the declaration**.
   * Behind the scenes, the compiler replaces all references to T with Object.
   * So, after the code compiles, the generics are actually just Object types. 
   * This means there is only one class file. 
-  * This process of removing the generics syntax from your code is referred to as type erasure. 
+  * **This process of removing the generics syntax from your code is referred to as type erasure**. 
   * The compiler adds the relevant casts if needed.
 
 &nbsp;
@@ -41,6 +41,12 @@ if the **generic type is specified in the declaration**.
 * Generic methods have a type parameter before the return type of the method declaration.
 * Type parameters can be bounded.
 * Generic methods can have different type parameters separated by commas in the method signature
+
+&nbsp;
+
+### Unbounded Wildcards ###
+* `List<String>` cannot be assigned to `List<Object>`.
+* `List<?>` means a List of “whatever”.  
 
 &nbsp;
 
