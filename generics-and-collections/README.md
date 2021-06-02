@@ -54,3 +54,4 @@ if the **generic type is specified in the declaration**.
 ----
 ### Useful links ###
 * [The Basics of Java Generics](https://www.baeldung.com/java-generics)
+* [Type Erasure in Java Explained](https://www.baeldung.com/java-type-erasure)
