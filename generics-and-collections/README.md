@@ -61,6 +61,15 @@ if the **generic type is specified in the declaration**.
 ### Unbounded Wildcards ###
 * `List<String>` cannot be assigned to `List<Object>`.
 * `List<?>` means a List of “whatever”.  
+* What is allowed now?   
+  * function `printList(List<?> list)` can take in a `List<String>`.
+  * `List<?> list = new ArrayList<String>();`
+* Basically, `List<String>` can be assigned to `List<?>` now
+* What is NOT allowed now?   
+  * Cannot add any entry to a `List<?>`. 
+  * I can only loop through a `List<?>` treating each entry as `Object`.
+* `List<String>` can be assigned to a `List<?>`.    
+  But, no object is a `?`.
 
 &nbsp;
 

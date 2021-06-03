@@ -21,5 +21,6 @@ public class Whatever {
         List<?> list2 = list;
         //list2.add("forty two"); // DOES NOT COMPILE
         //list2.add(58); // DOES NOT COMPILE
+        //list2.add(new Integer(58)); // DOES NOT COMPILE
     }
 }
