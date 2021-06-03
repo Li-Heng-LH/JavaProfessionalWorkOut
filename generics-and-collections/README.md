@@ -44,11 +44,27 @@ if the **generic type is specified in the declaration**.
 
 &nbsp;
 
+### What is NOT allowed ###
+* `List<Object> l = new ArrayList<String>();`
+* function `printList(List<Object> list)` cannot take in a `List<String>`.
+* Basically, `List<String>` cannot be assigned to `List<Object>`, 
+* Because Java cannot catch at runtime, and need to prevent at compile time. 
+
+&nbsp;
+
+### What is allowed ###
+* `Object[] objects = new String [2];`
+* function `printArray(Object [] arr)` can take in a `String[]`.
+
+&nbsp;
+
 ### Unbounded Wildcards ###
 * `List<String>` cannot be assigned to `List<Object>`.
 * `List<?>` means a List of “whatever”.  
 
 &nbsp;
+
+
 
 &nbsp;
 ----
