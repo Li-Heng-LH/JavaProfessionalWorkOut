@@ -73,7 +73,15 @@ if the **generic type is specified in the declaration**.
 
 &nbsp;
 
+### Upper-Bounded Wildcards ### 
+* `List<? extends Number> list = new ArrayList<Integer>();`
+* `List<Integer>` can now be assigned to `List<? extends Number>`
+* function `total(List<? extends Number> list)` can take in `List<Integer>`
+* What is NOT allowed? 
+  * Cannot add any entry to a `List<? extends Number>`.
+  * I can only loop through a `List<? extends Number>` treating each entry as `Number`.
 
+&nbsp;
 
 &nbsp;
 ----
