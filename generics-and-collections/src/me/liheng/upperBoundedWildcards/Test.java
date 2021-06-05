@@ -25,4 +25,15 @@ public class Test {
         //list.add(new Double(0.58)); // DOES NOT COMPILE
         //list.add("Hello"); // DOES NOT COMPILE
     }
+
+    //Type Erasure
+    //Java converts the above total method to the following equivalent
+    private static long totalEquivalent (List list) {  //Type Erasure
+        long count = 0;
+        for (Object object : list) {  //Type Erasure
+            Number number = (Number) object;  //Explicit conversion
+            count += number.longValue();
+        }
+        return count;
+    }
 }

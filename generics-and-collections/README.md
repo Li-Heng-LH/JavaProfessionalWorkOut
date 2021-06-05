@@ -80,6 +80,11 @@ if the **generic type is specified in the declaration**.
 * What is NOT allowed? 
   * Cannot add any entry to a `List<? extends Number>`.
   * I can only loop through a `List<? extends Number>` treating each entry as `Number`.
+* So how is Upper-Bounded Wildcards more useful than Unbounded Wildcards?  
+  * Well, in `List<? extends Number>`, each item is treated as a Number.   
+  * As for `List<?>`, each item is treated as an Object. 
+  * So in the case of Upper-Bounded Wildcards, for each item we can use Numbers' methods. 
+  * Objects' methods are too limited. 
 
 &nbsp;
 
