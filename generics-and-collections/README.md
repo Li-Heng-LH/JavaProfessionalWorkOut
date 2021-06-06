@@ -66,7 +66,8 @@ if the **generic type is specified in the declaration**.
   * `List<?> list = new ArrayList<String>();`
 * Basically, `List<String>` can be assigned to `List<?>` now
 * What is NOT allowed now?   
-  * Cannot add any entry to a `List<?>`. 
+  * Cannot add any entry to a `List<?>`. This is because Java does not what the actual type is and 
+  afraid of type cast exceptions later. 
   * I can only loop through a `List<?>` treating each entry as `Object`.
 * `List<String>` can be assigned to a `List<?>`.    
   But, no object is a `?`.
@@ -78,13 +79,17 @@ if the **generic type is specified in the declaration**.
 * `List<Integer>` can now be assigned to `List<? extends Number>`
 * function `total(List<? extends Number> list)` can take in `List<Integer>`
 * What is NOT allowed? 
-  * Cannot add any entry to a `List<? extends Number>`.
+  * Cannot add any entry to a `List<? extends Number>`. This is because Java does not what the actual type is and 
+  afraid of type cast exceptions later. 
   * I can only loop through a `List<? extends Number>` treating each entry as `Number`.
 * So how is Upper-Bounded Wildcards more useful than Unbounded Wildcards?  
   * Well, in `List<? extends Number>`, each item is treated as a Number.   
   * As for `List<?>`, each item is treated as an Object. 
   * So in the case of Upper-Bounded Wildcards, for each item we can use Numbers' methods. 
   * Objects' methods are too limited. 
+* **Regarding top hierarchy parent class**
+  * Yes, `List<Animal>` is a `List<? extends Animal>`
+  * For a `List<? extends Animal> list`, `list.add(new Animal());` DOES NOT compile. 
 
 &nbsp;
 
