@@ -90,6 +90,7 @@ if the **generic type is specified in the declaration**.
 * **Regarding top hierarchy parent class**
   * Yes, `List<Animal>` is a `List<? extends Animal>`
   * For a `List<? extends Animal> list`, `list.add(new Animal());` DOES NOT compile. 
+* ? can extend an interface too. 
 
 &nbsp;
 
