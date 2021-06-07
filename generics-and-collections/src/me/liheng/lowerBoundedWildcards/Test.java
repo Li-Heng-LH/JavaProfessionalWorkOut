@@ -26,8 +26,11 @@ public class Test {
         //lets say this is a list of mammals,
         //later we want to use mammals' methods, but Animal does not have.
         //i.e, possible issues with hierarchy levels.
+
+        list.add(new Husky()); //yes, fine, Husky is a Dog.
     }
 }
 
 class Animal {}
 class Dog extends Animal {}
+class Husky extends Dog {}
