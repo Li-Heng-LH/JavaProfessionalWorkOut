@@ -94,6 +94,34 @@ if the **generic type is specified in the declaration**.
 
 &nbsp;
 
+### Lower-Bounded Wildcards ###
+* Why do we need Lower-Bounded Wildcards? 
+  * With `List<?>` and `List<? extends Object>` we can already pass in a `List<String>`
+  * But, the list passed in is immutable. We cannot add elements to it. 
+  * If we pass in `List<? super String>`, we can then add a String to the list, it is safe. 
+* Why in a `List<? extends Animal>`, we cannot add Dog? 
+  * The list can contain Cats. 
+* Why in a `List<? extends Animal>`, we cannot add Animal? 
+  * Later we may need certain methods of Dog, Animal may not have.
+* Why in a `List<? super Dog>`, we can add Dog? 
+  * Where parent is expected, child can be used. 
+* Why in a `List<? super Dog>`, we still cannot add Animal? 
+  * possible issues with hierarchy levels.
+  * lets say this is a list of mammals, later we want to use mammals' methods, 
+  but Animal does not have.
+
+&nbsp;
+
+### Summary ###
+* Why do we need `List<?>` ?
+  * `List<String>` can be assigned to `List<?>`
+* Why do we need `List<? extends Number>` ?
+  * So that each element can be **treated as Number**, and use its methods. 
+* Why do we need `List<? super String>` ? 
+  * So that we **can add String** element to list. 
+
+&nbsp;
+
 &nbsp;
 ----
 ### Useful links ###

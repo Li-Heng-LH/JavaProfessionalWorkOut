@@ -17,6 +17,10 @@ public class TestTopHierarchy {
 
     private static void takeInAnimal(List<? extends Animal> list) {
         //list.add(new Animal()); //Oh, does not compile
+        //because later we may need certain methods of Dog, Animal may not have.
+
+        //list.add(new Dog()); //does not compile
+        //because the list can contain Cats.
     }
 }
 
