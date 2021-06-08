@@ -122,6 +122,12 @@ if the **generic type is specified in the declaration**.
 
 &nbsp;
 
+### My Generic class ### 
+* Return type need to be specified. Cannot use wildcard. 
+* pay attention to method-specific type parameter VS wildcard
+
+&nbsp;
+
 &nbsp;
 ----
 ### Useful links ###
