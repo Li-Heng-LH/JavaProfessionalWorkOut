@@ -128,6 +128,31 @@ if the **generic type is specified in the declaration**.
 
 &nbsp;
 
+### OCP Collections ###
+* List, Set, Map, Queue
+* `boolean add(E element)`
+* `boolean remove(Object object)` or overloaded one: `boolean remove(int index)`
+* `boolean isEmpty()`
+* `int size()`
+* `void clear()`
+* `boolean contains(Object object)`
+  * This method calls **equals()** on each element of the ArrayList to see if there are any matches.
+
+&nbsp;
+
+### List Interface ###
+* interface List extends Collection
+* ArrayList implements List
+* LinkedList implements both List and Queue
+* The main benefits of a LinkedList are that you can access, add, and remove 
+from the beginning and end of the list in constant time. 
+* The tradeoff is that dealing with an arbitrary index takes linear time.
+* Therefore, a LinkedList is a good choice to be used as a Queue.
+
+&nbsp;
+
+
+
 &nbsp;
 ----
 ### Useful links ###
