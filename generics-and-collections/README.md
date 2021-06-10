@@ -152,7 +152,15 @@ from the beginning and end of the list in constant time.
 &nbsp;
 
 ### Set ###
-* 
+* A HashSet stores its elements in a hash table. 
+* HashSet: constant-time for add(), remove() and contains()
+* A TreeSet stores its elements in a sorted tree structure. It sorts the elements in ascending order.
+* TreeSet: log(n) time for add(), remove() and contains()
+* TreeSet is a sorted collection that extends the AbstractSet class and implements the NavigableSet interface.
+* The TreeSet uses a **self-balancing binary search tree**, more specifically a Red-Black tree.
+* For Set, remember that 
+  * the equals() method is used to determine equality
+  * the hashCode() method is used to know which bucket to place the element  
 
 &nbsp;
 
@@ -161,3 +169,4 @@ from the beginning and end of the list in constant time.
 ### Useful links ###
 * [The Basics of Java Generics](https://www.baeldung.com/java-generics)
 * [Type Erasure in Java Explained](https://www.baeldung.com/java-type-erasure)
+* [A Guide to TreeSet in Java](https://www.baeldung.com/java-tree-set)
