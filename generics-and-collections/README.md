@@ -164,9 +164,28 @@ from the beginning and end of the list in constant time.
 
 &nbsp;
 
+### Queue implementations ###
+* `interface Deque<E> extends Queue<E>`
+* Double ended queue, supports element insertion and removal at both ends.
+* class LinkedList<E> implements Deque<E>
+* class ArrayDeque<E> implements Deque<E>
+* The ArrayDeque class is the resizeable array implementation of the Deque interface, 
+* whereas the LinkedList class is the list implementation.
+* Efficiency: 
+  * ArrayDeque is more efficient than the LinkedList for add and remove operation at both ends.
+
+&nbsp;
+
+### Queue Methods ###
+* 
+
+&nbsp;
+
 &nbsp;
 ----
 ### Useful links ###
 * [The Basics of Java Generics](https://www.baeldung.com/java-generics)
 * [Type Erasure in Java Explained](https://www.baeldung.com/java-type-erasure)
 * [A Guide to TreeSet in Java](https://www.baeldung.com/java-tree-set)
+* [Deque Implementations](https://docs.oracle.com/javase/tutorial/collections/implementations/deque.html)
+* [Interface Deque<E>](https://docs.oracle.com/javase/8/docs/api/java/util/Deque.html)
