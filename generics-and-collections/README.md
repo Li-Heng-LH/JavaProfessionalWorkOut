@@ -172,12 +172,36 @@ from the beginning and end of the list in constant time.
 * The ArrayDeque class is the resizeable array implementation of the Deque interface, 
 * whereas the LinkedList class is the list implementation.
 * Efficiency: 
+  * Deques can also be used as stacks. 
+  And it should be used in preference to the legacy Stack class. 
   * ArrayDeque is more efficient than the LinkedList for add and remove operation at both ends.
+  * ArrayDeque is likely to be faster than Stack when used as a stack, and faster than LinkedList when used as a queue.
+  * Therefore, use ArrayDeque to implement both queue and stack.
 
 &nbsp;
 
-### Queue Methods ###
-* 
+### Interface Queue Methods ###
+* Throws exception: 
+  * add(e)     -- true or exception  
+  * remove()   -- E or exception
+  * element()  -- E or exception
+* Returns special value: 
+  * offer(e)   -- true or false
+  * poll()     -- E or null
+  * peek()     -- E or null
+
+&nbsp;
+
+### Interface Deque Methods ###
+* When a deque is used as a queue, 
+elements are added at the end of the deque and removed from the beginning. 
+* When a deque is used as a stack, 
+elements are pushed and popped from the beginning of the deque. 
+* Therefore, a deque has both Queue and Stack methods. 
+* Stack methods: 
+  * push(e)   -- void or exception
+  * pop()     -- E or exception
+  * peek()    -- E or null
 
 &nbsp;
 
