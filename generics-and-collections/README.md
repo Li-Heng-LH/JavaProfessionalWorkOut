@@ -205,6 +205,12 @@ elements are pushed and popped from the beginning of the deque.
 
 &nbsp;
 
+### Using Deque ###
+* `Queue<Integer> queue = new ArrayDeque<>();`
+* 
+
+&nbsp;
+
 &nbsp;
 ----
 ### Useful links ###
