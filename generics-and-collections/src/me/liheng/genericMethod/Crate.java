@@ -20,3 +20,14 @@ public class Crate<T> {
         return Arrays.stream(a).collect(Collectors.toList());
     }
 }
+
+class Util {
+    public <T> void test(T something) {} // Here, the type parameter is needed.
+
+    // We can see the use of type parameter here
+    // Yes, type parameter can use wildcards
+    public <T extends List> T test2 (T something) { // Here, the type parameter is needed.
+        something.size();
+        return something;
+    }
+}

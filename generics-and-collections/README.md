@@ -38,6 +38,8 @@ if the **generic type is specified in the declaration**.
 &nbsp;
 
 ### Generic Methods ###
+* Generic methods are methods that introduce their own type parameters. 
+* This is similar to declaring a generic type, but the type parameter's scope is limited to the method where it is declared.
 * Generic methods have a type parameter before the return type of the method declaration.
 * Type parameters can be bounded.
 * Generic methods can have different type parameters separated by commas in the method signature
@@ -219,3 +221,4 @@ elements are pushed and popped from the beginning of the deque.
 * [A Guide to TreeSet in Java](https://www.baeldung.com/java-tree-set)
 * [Deque Implementations](https://docs.oracle.com/javase/tutorial/collections/implementations/deque.html)
 * [Interface Deque<E>](https://docs.oracle.com/javase/8/docs/api/java/util/Deque.html)
+* [Generic Methods](https://docs.oracle.com/javase/tutorial/java/generics/methods.html)
