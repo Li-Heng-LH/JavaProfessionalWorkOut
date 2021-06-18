@@ -209,6 +209,31 @@ elements are pushed and popped from the beginning of the deque.
 
 ### Using Deque ###
 * `Queue<Integer> queue = new ArrayDeque<>();`
+* `ArrayDeque<Integer> stack = new ArrayDeque<>();`
+* Note: LinkedList has all Deque methods as well.
+
+&nbsp;
+
+### Map Interface ###
+* Map Implementations
+  * HashMap: stores the keys in a hash table. hashCode() method is used to retrieve keys.   
+    Constant time for adding and retrieving elements. 
+  * LinkedHashMap: preserve the order of insertion
+  * TreeMap: preserve the natural order.   
+    Log n time for adding and retrieving elements. 
+  * Hashtable: is like Vector in that it is really old. 
+* Map methods: 
+  * `V get(Object key)`: return value or null
+  * `V put(K key, V value)`: return **previous** value or null.
+  * `Set<K> keySet()`: returns Set as keys are unique
+  * `Collection<V> values()`: returns Collection as values may not be unique
+  * Notes: those common methods do not throw exceptions. 
+  * TreeMap: Yes, as I have expected, the keySet returned from TreeMap is sorted.
+  * TreeMap: the values will be sorted according to te sorted keys as well.
+
+&nbsp;
+
+###  ###
 * 
 
 &nbsp;
