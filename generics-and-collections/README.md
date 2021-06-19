@@ -233,8 +233,16 @@ elements are pushed and popped from the beginning of the deque.
 
 &nbsp;
 
-###  ###
-* 
+### collections and null ###
+* Data structures that involve sorting do **NOT** allow nulls
+* ArrayDeque does **NOT** allow nulls because some methods use null as a special return value: 
+  * poll(), peek()
+* Hashtable does **NOT** allow null keys or values
+* In summary, all data structures allow nulls except these:
+  * TreeSet
+  * TreeMap: no null keys, can have null values
+  * Hashtable: no null keys and values
+  * ArrayDeque 
 
 &nbsp;
 
