@@ -246,6 +246,18 @@ elements are pushed and popped from the beginning of the deque.
 
 &nbsp;
 
+### Comparable Interface ###
+* Numbers sort before letters and uppercase letters sort before lowercase letters
+* A class that implements Comparable interface needs to implement compareTo() method
+* Rules for compareTo(): 
+  * returns 0 when this is equal to the argument
+  * returns negative when this is smaller than argument
+  * returns positive when this is greater than argument
+  * basically, it is like: return this - argument
+* 
+
+&nbsp;
+
 &nbsp;
 ----
 ### Useful links ###
