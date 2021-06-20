@@ -267,6 +267,25 @@ elements are pushed and popped from the beginning of the deque.
 
 &nbsp;
 
+### Comparison of Comparable and Comparator ###
+|            Difference            	| Comparable 	| Comparator 	|
+|:--------------------------------:	|:----------:	|:----------:	|
+|           Package name           	|  java.lang 	|  java.util 	|
+|     Method name in interface     	|  compareTo 	|   compare  	|
+|       Number of parameters       	|      1     	|      2     	|
+| Common to declare using a lambda 	|     No     	|     Yes    	|
+
+&nbsp;
+
+### TreeSet and Comparable/Comparator ###
+* Elements in TreeSet need to implement Comparable interface. 
+* If element added into TreeSet does not implement Comparable,   
+  an exception will be thrown at run time. 
+* Another way to store elements that do not implement Comparable in a TreeSet,  
+  is to initialise TreeSet with a Comparator. 
+
+&nbsp;
+
 &nbsp;
 ----
 ### Useful links ###
