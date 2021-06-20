@@ -254,7 +254,16 @@ elements are pushed and popped from the beginning of the deque.
   * returns negative when this is smaller than argument
   * returns positive when this is greater than argument
   * basically, it is like: return this - argument
-* 
+* Better to make Comparable classes consistent with equals. 
+  * compareTo() is consistent with equals <--> x.equals(y) is true whenever x.compareTo(y) equals 0
+
+&nbsp;
+
+### Comparator Interface ###
+* We need Comparator when: 
+  * we want to sort objects that do not implement Comparable
+  * we want to sort objects in an order that will break the equals consistency. 
+  * we want to sort objects in another order
 
 &nbsp;
 
