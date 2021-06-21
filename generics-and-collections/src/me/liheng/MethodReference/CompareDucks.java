@@ -19,6 +19,7 @@ public class CompareDucks {
 
         useAnonymousInnerClass(ducks);
         useLambda(ducks);
+        intermediate(ducks);
         useMethodReference(ducks);
     }
 
@@ -39,6 +40,13 @@ public class CompareDucks {
         System.out.println(ducks);
     }
 
+    private void intermediate(List<Duck> ducks) {
+        System.out.println("Using intermediate approach, sorted by weight");
+        ducks.sort((d1, d2) -> DuckHelper.compareByWeight(d1, d2));
+        System.out.println(ducks);
+    }
+
+    //The :: operator tells Java to pass the parameters automatically into compareByWeight.
     private void useMethodReference(List<Duck> ducks) {
         System.out.println("Using method references, sorted by weight");
         ducks.sort(DuckHelper::compareByWeight);

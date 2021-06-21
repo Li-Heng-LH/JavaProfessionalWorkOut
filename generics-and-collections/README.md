@@ -289,6 +289,9 @@ elements are pushed and popped from the beginning of the deque.
 ### Method References ###
 * Sometimes,  a lambda expression does nothing but call an existing method. 
 * In this case, it is clearer to refer to the existing method by name. 
+* How this actually works is:  
+  The :: operator tells Java to pass the parameters automatically into the method referred.
+* 
 
 &nbsp;
 
