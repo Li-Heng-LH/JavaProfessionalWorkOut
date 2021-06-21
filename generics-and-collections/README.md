@@ -286,6 +286,12 @@ elements are pushed and popped from the beginning of the deque.
 
 &nbsp;
 
+### Method References ###
+* Sometimes,  a lambda expression does nothing but call an existing method. 
+* In this case, it is clearer to refer to the existing method by name. 
+
+&nbsp;
+
 &nbsp;
 ----
 ### Useful links ###
