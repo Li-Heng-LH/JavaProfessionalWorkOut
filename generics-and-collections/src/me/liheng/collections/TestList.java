@@ -8,7 +8,7 @@ public class TestList {
 
     public static void main(String[] args) {
 
-        //Test iterator
+        //RemoveConditionally iterator
         List<String> list = new ArrayList<>();
         list.add("Hello");
         list.add("World");

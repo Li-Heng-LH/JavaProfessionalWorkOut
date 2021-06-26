@@ -294,6 +294,7 @@ elements are pushed and popped from the beginning of the deque.
 * `Interface Predicate<T>` : `boolean test(T t)`  
   `Interface Consumer<T>`  : `void accept(T t)`
   `Interface Supplier<T>`  : `T get()`
+  `Interface UnaryOperator<T>` : `R apply(T t)`
 * Static method format: `Collections::sort`
 * Instance methods on a particular instance: `str::startsWith`
 * Instance methods on an instance to be determined at runtime: `String::isEmpty`   
@@ -301,6 +302,18 @@ elements are pushed and popped from the beginning of the deque.
   Java knows that isEmpty is an instance method that does not take any parameters.
   **Java uses the parameter supplied at runtime as the instance on which the method is called**.
 * Constructor format: `ArrayList::new`
+* 规律: Referred method 只需要 method name, 不需要(). 
+* 规律: Runtime instance method reference, 不可以 take in arguments. 
+
+&nbsp;
+
+### removeIf ###
+*  `boolean removeIf(Predicate<? super E> filter)`
+
+&nbsp;
+
+### replaceAll ###
+* `void replaceAll(UnaryOperator<E> o)`
 
 &nbsp;
 
