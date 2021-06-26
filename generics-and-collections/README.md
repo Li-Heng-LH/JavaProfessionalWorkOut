@@ -291,7 +291,16 @@ elements are pushed and popped from the beginning of the deque.
 * In this case, it is clearer to refer to the existing method by name. 
 * How this actually works is:  
   The :: operator tells Java to pass the parameters automatically into the method referred.
-* 
+* `Interface Predicate<T>` : `boolean test(T t)`  
+  `Interface Consumer<T>`  : `void accept(T t)`
+  `Interface Supplier<T>`  : `T get()`
+* Static method format: `Collections::sort`
+* Instance methods on a particular instance: `str::startsWith`
+* Instance methods on an instance to be determined at runtime: `String::isEmpty`   
+  It looks like a static method, but it isn’t. 
+  Java knows that isEmpty is an instance method that does not take any parameters.
+  **Java uses the parameter supplied at runtime as the instance on which the method is called**.
+* Constructor format: `ArrayList::new`
 
 &nbsp;
 
