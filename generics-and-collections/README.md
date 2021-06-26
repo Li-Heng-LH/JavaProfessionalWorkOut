@@ -317,6 +317,12 @@ elements are pushed and popped from the beginning of the deque.
 
 &nbsp;
 
+### forEach ### 
+* `default void forEach(Consumer<? super T> action)`
+* and the default implementation behaves as if: `for (T t : this) action.accept(t);`
+
+&nbsp;
+
 &nbsp;
 ----
 ### Useful links ###
