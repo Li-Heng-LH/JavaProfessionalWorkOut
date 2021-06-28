@@ -295,6 +295,7 @@ elements are pushed and popped from the beginning of the deque.
   `Interface Consumer<T>`  : `void accept(T t)`
   `Interface Supplier<T>`  : `T get()`
   `Interface UnaryOperator<T>` : `R apply(T t)`
+  `Interface BiFunction<T,U,R>` : `R apply(T t, U u)`
 * Static method format: `Collections::sort`
 * Instance methods on a particular instance: `str::startsWith`
 * Instance methods on an instance to be determined at runtime: `String::isEmpty`   
@@ -320,6 +321,20 @@ elements are pushed and popped from the beginning of the deque.
 ### forEach ### 
 * `default void forEach(Consumer<? super T> action)`
 * and the default implementation behaves as if: `for (T t : this) action.accept(t);`
+
+&nbsp;
+
+### Java 8 Map APIs ### 
+* `putIfAbsent`: puts if
+  * key is not there at all
+  * value is null
+* `merge(K key, V value, BiFunction<? super V,? super V,? extends V> remappingFunction)`:   
+  * if key is not there at all
+  * or value is null
+  * associates it with the given non-null value
+  * Otherwise, replaces the associated value with the results of the given remapping function, or removes if the result is null.
+  * returns the new value associated with the specified key, or null if no value is associated with the key
+  * When the mapping function is called and returns null： the key is removed from the map. 
 
 &nbsp;
 
