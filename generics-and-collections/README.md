@@ -308,23 +308,59 @@ elements are pushed and popped from the beginning of the deque.
 
 &nbsp;
 
-### removeIf ###
-*  `boolean removeIf(Predicate<? super E> filter)`
+### Collections util method: sort ###
+* `public static <T extends Comparable<? super T>> void sort(List<T> list)`
+* Sorts the specified list into ascending order, according to the natural ordering of its elements
+* `public static <T> void sort(List<T> list, Comparator<? super T> c)`
+* Sorts the specified list according to the order induced by the specified comparator. 
+* Collections.sort
 
 &nbsp;
 
-### replaceAll ###
+### Collections.sort vs list.sort ###
+* Interface List<E> instance method: `default void sort(Comparator<? super E> c)` 
+* The method List.sort(comparator) that you are referring to was introduced in Java 8,   
+  whereas the utility method Collections.sort has been there since Java 1.2.
+
+&nbsp;
+
+### Collections util method: binarySearch ###
+* `static <T> int binarySearch(List<? extends Comparable<? super T>> list, T key)`
+* The list must be sorted into **ascending** order according to the natural ordering of its elements.
+* `static <T> int binarySearch(List<? extends T> list, T key, Comparator<? super T> c)`
+* The list must be sorted into **ascending** order according to the specified comparator. 
+* If it is not sorted, the results are undefined. 
+* Returns the index of the search key, if it is contained in the list; otherwise, (-(insertion point) - 1).
+* Collections.binarySearch
+
+&nbsp;
+
+### Collection instance method: removeIf ###
+* `boolean removeIf(Predicate<? super E> filter)`
+* Removes all of the elements of this collection that satisfy the given predicate.
+
+&nbsp;
+
+### List instance method: replaceAll ###
 * `void replaceAll(UnaryOperator<E> o)`
+* Replaces each element of this list with the result of applying the operator to that element.
 
 &nbsp;
 
-### forEach ### 
+### Collections util method: replaceAll ###
+* `static <T> boolean replaceAll(List<T> list, T oldVal, T newVal)`
+* Replaces all occurrences of one specified value in a list with another. 
+
+&nbsp;
+
+### Collection instance method: forEach ### 
 * `default void forEach(Consumer<? super T> action)`
 * and the default implementation behaves as if: `for (T t : this) action.accept(t);`
+* Performs the given action for each element of the Iterable until all elements have been processed or the action throws an exception. 
 
 &nbsp;
 
-### Java 8 Map APIs ### 
+### Java 8 Map instance methods ### 
 * `putIfAbsent`: puts if
   * key is not there at all
   * value is null
@@ -336,6 +372,15 @@ elements are pushed and popped from the beginning of the deque.
   * returns the new value associated with the specified key, or null if no value is associated with the key
   * When the mapping function is called and returns null： the key is removed from the map. 
 
+&nbsp;
+
+### Summary of key points ###
+* Generics
+  * `<? extends Object>` is Upper bound. --> extend upper bound
+  * `<? super Number>` is Lower bound.   --> super lower bound
+  * Add or remove to a list with an **unbounded** or **upper-bounded** wildcard --> compiler error
+  * Add or remove to a list with _?_ or _extends_ --> compiler error
+  
 &nbsp;
 
 &nbsp;
