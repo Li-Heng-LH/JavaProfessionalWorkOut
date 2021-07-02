@@ -150,6 +150,13 @@ if the **generic type is specified in the declaration**.
 
 &nbsp;
 
+### Type Parameter ###
+* Use of type parameter: once passed in the actual type, T can be treated as actual type across the class.  
+* Use of type parameter: can use `<T extends Number>`, T can then use Number's methods.
+* `<T super Number>` is NOT allowed. Because after type erasure, T is treated as Object.
+
+&nbsp;
+
 ### OCP Collections ###
 * List, Set, Map, Queue
 * `boolean add(E element)`

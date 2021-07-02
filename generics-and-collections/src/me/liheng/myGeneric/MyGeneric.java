@@ -2,6 +2,7 @@ package me.liheng.myGeneric;
 
 import java.util.List;
 
+// About type parameters
 public class MyGeneric <T> {
 
     //perfectly normal use of generics
@@ -17,8 +18,12 @@ public class MyGeneric <T> {
         return new A();
     }
 
+    <E extends String> A method4 (List<? extends E> list) {
+        return new A();
+    }
+
     // We are using E as a type parameter just for this method
-    <E> A method3 (List<? extends E> list) {
+    <E> A method3 (List<? super E> list) {
         return new A();
     }
 }
