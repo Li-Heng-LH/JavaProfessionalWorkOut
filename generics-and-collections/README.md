@@ -128,18 +128,18 @@ if the **generic type is specified in the declaration**.
 
 ### Concise Summary ###
 * Why do we need unbounded?
-  * ArrayList<String> cannot be assigned to List<Object>
-  * ArrayList<String> can be assigned to List<?>
+  * `ArrayList<String>` cannot be assigned to `List<Object>` 
+  * `ArrayList<String>` can be assigned to `List<?>` 
 * Why do we need Upperbound? 
   * So that each element can be **treated as Upperbound**, and use its methods. 
 * Why do we need Lowerbound? 
   * So that we **can add Lowerbound** element to list. 
-* `?` can only be at the left hand side of `=`
+* `?` can only be at the left hand side of `=` 
 
 &nbsp;
 
-### Insights ###
-* List<String> is not a child of List<Object>. They are totally different.
+### Insights ### 
+* `List<String>` is not a child of `List<Object>`. They are totally different.
 * We can only access the methods of an object's reference type. 
 
 &nbsp;
