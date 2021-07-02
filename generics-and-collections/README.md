@@ -116,11 +116,31 @@ if the **generic type is specified in the declaration**.
 
 ### Summary ###
 * Why do we need `List<?>` ?
-  * `List<String>` can be assigned to `List<?>`
-* Why do we need `List<? extends Number>` ?
+  * `List<Object> list = new ArrayList<String>();` is NOT ok
+  * `List<?> list = new ArrayList<String>();` is ok
+* Why do we need `List<? extends Number>` Upperbound? 
   * So that each element can be **treated as Number**, and use its methods. 
-* Why do we need `List<? super String>` ? 
+* Why do we need `List<? super String>` Lowerbound? 
   * So that we **can add String** element to list. 
+* `?` is only used to define, not to instantiate.
+
+&nbsp;
+
+### Concise Summary ###
+* Why do we need unbounded?
+  * ArrayList<String> cannot be assigned to List<Object>
+  * ArrayList<String> can be assigned to List<?>
+* Why do we need Upperbound? 
+  * So that each element can be **treated as Upperbound**, and use its methods. 
+* Why do we need Lowerbound? 
+  * So that we **can add Lowerbound** element to list. 
+* `?` can only be at the left hand side of `=`
+
+&nbsp;
+
+### Insights ###
+* List<String> is not a child of List<Object>. They are totally different.
+* We can only access the methods of an object's reference type. 
 
 &nbsp;
 
