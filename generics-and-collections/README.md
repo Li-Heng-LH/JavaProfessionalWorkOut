@@ -193,6 +193,14 @@ from the beginning and end of the list in constant time.
 
 &nbsp;
 
+### TreeSet ###
+* lower -> greatest element that is strictly smaller than parameter  , or null
+* floor -> greatest element that is smaller or equal to parameter    , or null
+* ceiling -> smallest element that is greater or equal to parameter  , or null
+* higher -> smallest element that is strictly greater than parameter , or null
+
+&nbsp;
+
 ### Queue implementations ###
 * `interface Deque<E> extends Queue<E>`
 * Double ended queue, supports element insertion and removal at both ends.
