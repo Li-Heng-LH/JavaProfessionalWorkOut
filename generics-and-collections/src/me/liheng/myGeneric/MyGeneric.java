@@ -1,5 +1,6 @@
 package me.liheng.myGeneric;
 
+import java.util.ArrayList;
 import java.util.List;
 
 // About type parameters
@@ -25,6 +26,11 @@ public class MyGeneric <T> {
     // We are using E as a type parameter just for this method
     <E> A method3 (List<? super E> list) {
         return new A();
+    }
+
+    public void useMethodWithOddSyntax() {
+        MyGeneric.method1(new ArrayList<>());
+        MyGeneric.<T>method1(new ArrayList<>());
     }
 }
 

@@ -166,6 +166,11 @@ if the **generic type is specified in the declaration**.
 * `void clear()`
 * `boolean contains(Object object)`
   * This method calls **equals()** on each element of the ArrayList to see if there are any matches.
+* Implementation classes
+  * List:  ArrayList, LinkedList, Stack, Vector
+  * Set:   HashSet, TreeSet
+  * Queue: ArrayDeque, LinkedList
+  * Map:   HashMap, TreeMap, Hashtable
 
 &nbsp;
 
