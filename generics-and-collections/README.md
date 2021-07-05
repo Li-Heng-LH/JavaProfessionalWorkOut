@@ -13,7 +13,10 @@
 
 ### Autoboxing ###
 * Autoboxing automatically converts a primitive to the corresponding wrapper classes when needed 
-if the **generic type is specified in the declaration**. 
+if the **generic type is specified in the declaration**. --> 
+* therefore, Integer can do arithmetic with Integer
+* int can be assigned to Integer
+* Integer can be assigned into int
 
 &nbsp;
 
