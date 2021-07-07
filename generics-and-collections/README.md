@@ -378,6 +378,18 @@ elements are pushed and popped from the beginning of the deque.
 
 &nbsp;
 
+### Insights on sort and binary search ### 
+* The Arrays and Collections classes have static methods sort() and binarySearch().
+* Both take in **List** and not something else.
+* Both take an optional **Comparator** parameter. 
+* **It is _necessary_ to use the same sort order for both sorting and searching,**   
+  **else the result is undefined.** 
+* binarySearch requirements: 
+  * sorted with same comparator can alr. 
+  * does NOT mean must be "1,2,3,4,5" 
+
+&nbsp;
+
 ### Collection instance method: removeIf ###
 * `boolean removeIf(Predicate<? super E> filter)`
 * Removes all of the elements of this collection that satisfy the given predicate.
