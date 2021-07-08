@@ -178,6 +178,7 @@ This means that each and every enum value is required to implement this method.
 | Can access local variables of enclosing class  	|            No            	|     Effectively final    	|     Effectively final    	|                  No                  	|
 | Can declare static fields or methods           	|            No            	|            No            	|            No            	|                  Yes                 	|
 | Allow access modifiers                         	|            Yes           	|    No, local to method   	|  No, local to statement  	|                  Yes                 	|
+
 &nbsp;
 
 ### import util class ###
