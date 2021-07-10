@@ -18,8 +18,8 @@
 
 &nbsp;
 
-### Supplier ###
-* 
+### `Supplier <T>` ###
+* `T get()`
 
 &nbsp;
 
