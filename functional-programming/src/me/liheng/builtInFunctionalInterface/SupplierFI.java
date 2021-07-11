@@ -25,4 +25,23 @@ public class SupplierFI {
         System.out.println(s4.get());
         System.out.println(list);
     }
+
+    private void explore() {
+        // anonymous inner class way
+        Supplier<ArrayList<String>> naiveSupplier = new Supplier<ArrayList<String>>() {
+            @Override
+            public ArrayList<String> get() {
+                return new ArrayList<String>();
+            }
+        };
+
+        // lambda way
+        Supplier<ArrayList<String>> lambdaSupplier = () -> new ArrayList<>();
+
+        // method reference way
+        Supplier<ArrayList<String>> referenceSupplier = ArrayList::new;
+
+        // How to read those lines of code?
+        // I am creating a supplier that can return a new ArrayList when i call get()
+    }
 }

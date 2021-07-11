@@ -20,8 +20,12 @@
 
 ### `Supplier <T>` ###
 * `T get()`
+* How to read the lambda code?   
+  I am creating a supplier that can return a new T when I call get()
 
 &nbsp;
+
+
 
 &nbsp;
 ----
