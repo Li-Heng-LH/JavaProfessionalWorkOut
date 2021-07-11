@@ -340,8 +340,8 @@ elements are pushed and popped from the beginning of the deque.
   `Interface UnaryOperator<T>` : `R apply(T t)`
   `Interface BiFunction<T,U,R>` : `R apply(T t, U u)`
 * Static method format: `Collections::sort`
-* Instance methods on a particular instance: `str::startsWith`
-* Instance methods on an instance to be determined at runtime: `String::isEmpty`   
+* Instance methods on a known instance: `str::startsWith`, usually static/instance/eff.final variables (no need pass in)
+* Instance methods on an instance to be passed in at runtime: `String::isEmpty`   
   It looks like a static method, but it isn’t. 
   Java knows that isEmpty is an instance method that does not take any parameters.
   **Java uses the parameter supplied at runtime as the instance on which the method is called**.

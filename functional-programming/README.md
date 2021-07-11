@@ -33,7 +33,12 @@
 
 ### `BiConsumer<T, U>` ###
 * `void accept(T t, U u);`
-* 
+
+&nbsp;
+
+### `Predicate<T>` and `BiPredicate<T>` ###
+* `boolean test(T t);`
+* `boolean test(T t, U u);`
 
 &nbsp;
 

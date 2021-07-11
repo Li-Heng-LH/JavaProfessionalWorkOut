@@ -32,7 +32,7 @@ public class FourFormats {
     }
 
     private void instanceMethodOnInstance() {
-        String str = "abc";
+        String str = "abc"; // effectively final
         Predicate<String> predicate = s -> str.startsWith(s);
         Predicate<String> predicate2 = str::startsWith;
 
