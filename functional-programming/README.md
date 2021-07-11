@@ -19,12 +19,23 @@
 &nbsp;
 
 ### `Supplier <T>` ###
-* `T get()`
+* `T get();`
 * How to read the lambda code?   
   I am creating a supplier that can return a new T when I call get()
 
 &nbsp;
 
+### `Consumer <T>` ###
+* `void accept(T t);`
+* I am creating a consumer that accepts a T and process it. 
+
+&nbsp;
+
+### `BiConsumer<T, U>` ###
+* `void accept(T t, U u);`
+* 
+
+&nbsp;
 
 
 &nbsp;
