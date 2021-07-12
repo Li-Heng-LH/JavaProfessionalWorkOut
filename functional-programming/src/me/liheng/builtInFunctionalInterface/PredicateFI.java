@@ -1,11 +1,13 @@
 package me.liheng.builtInFunctionalInterface;
 
+import java.util.function.BiPredicate;
 import java.util.function.Predicate;
 
 public class PredicateFI {
 
     public static void main(String[] args) {
         predicate();
+        biPredicate();
     }
 
     private static void predicate() {
@@ -26,5 +28,25 @@ public class PredicateFI {
 
         System.out.println(referencePredicate.test(""));
         System.out.println(referencePredicate.test("abc"));
+    }
+
+    private static void biPredicate() {
+
+        // anonymous inner class
+        BiPredicate<String, String> anonymousBP = new BiPredicate<String, String>() {
+            @Override
+            public boolean test(String s, String prefix) {
+                return s.startsWith(prefix);
+            }
+        };
+
+        // lambda
+        BiPredicate<String, String> lambdaBP = (s, prefix) -> s.startsWith(prefix);
+
+        // method reference
+        // combines two techniques
+        BiPredicate<String, String> referenceBP = String::startsWith;
+
+        System.out.println(referenceBP.test("abc", "a"));
     }
 }
