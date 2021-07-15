@@ -48,10 +48,21 @@
 
 &nbsp; 
 
+### `UnaryOperator <T>` and `BinaryOperator<T>` ###
+* `UnaryOperator<T>` extends `Function<T, T>`
+* `BinaryOperator<T>` extends `BiFunction<T, T, T>`
+* A UnaryOperator transforms its value into one of the same type. 
+* A BinaryOperator merges two values into one of the same type.
+* `T apply(T t);`
+* `T apply(T t1, T t2);`
+
+&nbsp; 
+
 ### Bi-FI method reference summary ###
-* BiConsumer:  `map::put`
-* BiPredicate: `String::startsWith`
-* BiFunction:  `String::concat`
+* BiConsumer:     `map::put`
+* BiPredicate:    `String::startsWith`
+* BiFunction:     `String::concat`
+* BinaryOperator: `String::concat`
 
 &nbsp; 
 
