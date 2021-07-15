@@ -13,8 +13,19 @@
 &nbsp;
 
 ### Common functional interfaces ###
-* These are in the java.util.function package. 
+* These are in the java.util.function package.   
 
+| Functional Interfaces | Single Abstract Method | #Parameters | Return Type |
+|-----------------------|:----------------------:|:-----------:|:-----------:|
+| Supplier<T>           |           get          |      0      |      T      |
+| Consumer<T>           |         accept         |    1 (T)    |     void    |
+| BiConsumer<T, U>      |         accept         |   2 (T, U)  |     void    |
+| Predicate<T>          |          test          |    1 (T)    |   boolean   |
+| BiPredicate<T, U>     |          test          |   2 (T, U)  |   boolean   |
+| Function<T, R>        |          apply         |    1 (T)    |      R      |
+| BiFunction<T, U, R>   |          apply         |   2 (T, U)  |      R      |
+| UnaryOperator<T>      |          apply         |    1 (T)    |      T      |
+| BinaryOperator<T>     |          apply         |   2 (T, T)  |      T      |
 
 &nbsp;
 
@@ -63,6 +74,15 @@
 * BiPredicate:    `String::startsWith`
 * BiFunction:     `String::concat`
 * BinaryOperator: `String::concat`
+
+&nbsp; 
+
+### Practice ###
+* What if I omit the generics?
+  * `Predicate ex4 = String::isEmpty; // DOES NOT COMPILE`
+  * This makes the parameter that was passed an Object rather than a String. 
+  * The lambda expects a String because it calls a method that exists on String rather than Object.
+* When you see a boolean returned, think `Predicate` unless the generics specify a Boolean return type. 
 
 &nbsp; 
 
