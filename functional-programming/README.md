@@ -36,7 +36,7 @@
 
 &nbsp;
 
-### `Predicate<T>` and `BiPredicate<T>` ###
+### `Predicate<T>` and `BiPredicate<T, U>` ###
 * `boolean test(T t);`
 * `boolean test(T t, U u);`
 
