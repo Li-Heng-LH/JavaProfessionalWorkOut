@@ -42,6 +42,18 @@
 
 &nbsp;
 
+### `Function<T, R>` and `BiFunction<T, U, R>` ###
+* `R apply(T t);`
+* `R apply(T t, U u);`
+
+&nbsp; 
+
+### Bi-FI method reference summary ###
+* BiConsumer:  `map::put`
+* BiPredicate: `String::startsWith`
+* BiFunction:  `String::concat`
+
+&nbsp; 
 
 &nbsp;
 ----
