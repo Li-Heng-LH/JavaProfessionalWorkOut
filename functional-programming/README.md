@@ -86,6 +86,17 @@
 
 &nbsp; 
 
+### Optional ###
+* `Optional<Double>`
+* `Optional.empty()`
+* `Optional.of(95)`
+* `Optional.ofNullable(null)`
+* `opt.isPresent()`
+* `opt.get()`
+
+
+&nbsp;
+
 &nbsp;
 ----
 ### Useful links ###

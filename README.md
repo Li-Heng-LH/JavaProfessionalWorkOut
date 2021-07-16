@@ -7,6 +7,7 @@ Work out examples while studying for Java Professional Cert.
 * [Advanced class design](/advanced-class-design/README.md)
 * [Design principles and patterns](/design-patterns/README.md)
 * [Generics and collections](/generics-and-collections/README.md)
+* [Functional programming](/functional-programming/README.md)
 * [Java I/O](/javaIO/README.md)
 
 
