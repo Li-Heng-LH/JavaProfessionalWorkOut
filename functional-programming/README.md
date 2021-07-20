@@ -86,13 +86,15 @@
 
 &nbsp; 
 
-### Optional ###
+### Optional static methods ###
 * `Optional<Double>`
 * `Optional.empty()`
 * `Optional.of(95)`
-* `Optional.ofNullable(null)`
-* `opt.isPresent()`
-* `opt.get()`
+* `Optional.ofNullable(null)`: Returns an Optional describing the specified value if non-null, otherwise returns empty Optional
+
+&nbsp;
+
+### Optional instance methods ###
 
 
 &nbsp;
