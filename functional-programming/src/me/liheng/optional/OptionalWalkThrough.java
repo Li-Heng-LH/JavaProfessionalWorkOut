@@ -2,6 +2,7 @@ package me.liheng.optional;
 
 import java.util.Optional;
 import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 public class OptionalWalkThrough {
 
@@ -54,5 +55,30 @@ public class OptionalWalkThrough {
     }
 
     private static void orElseMethods() {
+        Optional<Double> opt = average();
+
+        // orElse(T other) : Returns other
+        System.out.println(opt.orElse(0.0));
+        System.out.println(opt.orElse(Double.NaN));
+        System.out.println(opt.orElse(Math.random()));
+
+        // orElseGet(Supplier s) : Returns result of calling Supplier
+        // anonymous class
+        System.out.println(opt.orElseGet(new Supplier<Double>() {
+            @Override
+            public Double get() {
+                return Math.random();
+            }
+        }));
+        // lambda
+        System.out.println(opt.orElseGet(() -> Math.random()));
+        // method reference
+        System.out.println(opt.orElseGet(Math::random));
+
+        // orElseThrow(Supplier s) : Throws exception created by calling Supplier
+        // lambda
+        System.out.println(opt.orElseThrow(() -> new IllegalStateException()));
+        // method reference
+        System.out.println(opt.orElseThrow(IllegalAccessError::new));
     }
 }

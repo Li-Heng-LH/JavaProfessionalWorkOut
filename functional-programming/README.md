@@ -95,7 +95,14 @@
 &nbsp;
 
 ### Optional instance methods ###
-
+| Method                  | When Optional Is Empty                                                | When Optional Contains a Value |
+|-------------------------|-----------------------------------------------------------------------|--------------------------------|
+| get()                   | Throws an exception                                                   | Returns value                  |
+| isPresent()             | false                                                                 | true                           |
+| ifPresent(Consumer c)   | Does nothing                                                          | Calls Consumer c with value    |
+| orElse(T other)         | Returns other                                                         | Returns value                  |
+| orElseGet(Supplier s)   | Returns result of calling Supplier (That returns T)                   | Returns value                  |
+| orElseThrow(Supplier s) | Throws exception created by calling Supplier (That returns Throwable) | Returns value                  |
 
 &nbsp;
 
