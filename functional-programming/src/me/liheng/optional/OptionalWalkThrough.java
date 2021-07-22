@@ -55,7 +55,7 @@ public class OptionalWalkThrough {
     }
 
     private static void orElseMethods() {
-        Optional<Double> opt = average();
+        Optional<Double> opt = average();  // Optional with null
 
         // orElse(T other) : Returns other
         System.out.println(opt.orElse(0.0));
