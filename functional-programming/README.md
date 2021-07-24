@@ -107,6 +107,28 @@
 &nbsp;
 
 ### Streams ###
+* A stream in Java is a **sequence of data**. 
+* A stream pipeline is the operations that run on a stream to produce a result. 
+* A stream pipeline has 3 parts: 
+  * Source: Where the stream comes from.
+  * Intermediate operations: Transforms the stream into another one.  
+    Since streams use lazy evaluation, the intermediate operations do not run until the terminal operation runs.
+  * Terminal operation: Actually produces a result. The stream is no longer valid after a terminal operation completes.
+
+&nbsp;
+
+### Intermediate vs. terminal operations ###
+| Scenario                                | Intermediate Operations | Terminal Operations |
+|-----------------------------------------|-------------------------|---------------------|
+| Required part of a useful pipeline?     | No                      | Yes                 |
+| Can exist multiple times in a pipeline? | Yes                     | No                  |
+| Return type is a stream type?           | Yes                     | No                  |
+| Executed upon method call?              | No                      | Yes                 |
+| Stream valid after call?                | Yes                     | No                  |
+
+&nbsp;
+
+### Creating Stream Sources ###
 * 
 
 &nbsp;
