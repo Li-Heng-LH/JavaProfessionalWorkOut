@@ -1,7 +1,6 @@
 package me.liheng.streamAPI;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Stream;
 
 public class StreamSources {
@@ -29,6 +28,10 @@ public class StreamSources {
         System.out.println(fromListParallel.count());
 
         infiniteStream();
+
+        collectionToStream();
+
+        mapToStream();
     }
 
     private static void infiniteStream() {
@@ -40,5 +43,26 @@ public class StreamSources {
         // randoms.forEach(System.out::println); //This will run infinitely
 
         Stream<Integer> oddNumbers = Stream.iterate(1, n -> n + 2);
+    }
+
+    private static void collectionToStream() {
+        Set<Integer> integers = new HashSet<>();
+        integers.add(1);
+        integers.add(2);
+        System.out.println(integers.stream().count());
+    }
+
+    private static void mapToStream() {
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "A");
+        map.put(2, "B");
+
+        Set<Map.Entry<Integer, String>> entries = map.entrySet();
+        entries.stream()
+                .forEach(System.out::println);
+
+        Set<Integer> keySet = map.keySet();
+        keySet.stream()
+                .forEach(System.out::println);
     }
 }

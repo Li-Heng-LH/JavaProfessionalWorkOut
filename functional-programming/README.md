@@ -135,6 +135,16 @@
 * `static <T> Stream<T>	iterate(T seed, UnaryOperator<T> f)`:   
   Returns an infinite sequential ordered Stream produced by iterative application of a function f to seed,  
   producing a Stream consisting of seed, f(seed), f(f(seed)), etc.
+* `Collection` Interface (List, Set, Queue, Deque) has these methods: 
+  * `default Stream<E>	stream()`
+  * `default Stream<E>	parallelStream()`
+* To get Stream from Map: 
+  * convert to Set first.
+
+&nbsp;
+
+### Common Terminal Operations ###
+* 
 
 &nbsp;
 
