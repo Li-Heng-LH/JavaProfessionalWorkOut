@@ -145,10 +145,24 @@
 &nbsp;
 
 ### Common Terminal Operations ###
+| Method                                                            	| Desc                                                       	| Signature                                                                                                                                                                                         	| Retur Type  	| Reduction? 	| What Happens for Infinite Streams 	|
+|-------------------------------------------------------------------	|------------------------------------------------------------	|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|-------------	|------------	|-----------------------------------	|
+| count()                                                           	| determines the number of elements in a finite stream       	| long count()                                                                                                                                                                                      	| long        	| Yes        	| Does not terminate                	|
+| min(Comparator), max(Comparator)                                  	| pass comparator and find min max                           	| Optional<T> min(<? super T> comparator)                                                                                                                                                           	| Optional<T> 	| Yes        	| Does not terminate                	|
+| findAny(), findFirst()                                            	| return an element of the stream unless the stream is empty 	| Optional<T> findAny()                                                                                                                                                                             	| Optional<T> 	| No         	| Terminates                        	|
+| allMatch(Predicate), anyMatch(Predicate) and noneMatch(Predicate) 	| search a stream and return boolean                         	| boolean anyMatch(Predicate <? super T> predicate)                                                                                                                                                 	| boolean     	| No         	| May or may not terminate          	|
+| forEach(Consumer)                                                 	|                                                            	| void forEach(Consumer<? super T> action)                                                                                                                                                          	| void        	| No         	| Does not terminate                	|
+| reduce()                                                          	| combines a stream into a single object                     	| T reduce(T identity, BinaryOperator<T> accumulator) Optional<T> reduce(BinaryOperator<T> accumulator) <U> U reduce(U identity, BiFunction<U,? super T,U> accumulator, BinaryOperator<U> combiner) 	|             	| Yes        	| Does not terminate                	|
+
 * **Reduction is a special type of terminal operation where all contents of the stream are combined into a single primitive or Object.** 
 * Note on `forEach(Consumer)`: 
   * Both `Iterable` and `Stream` have `forEach(Consumer)`.
   * Cannot use a traditional for loop on a stream, because Stream is not `Iterable`. 
+* Purpose of `Optional<T> reduce(BinaryOperator<T> accumulator)`: 
+  * If the stream is empty, an empty Optional is returned.
+  * If the stream has one element, it is returned.
+  * If the stream has multiple elements, the accumulator is applied to combine them.
+  * To differentiate if the returned value is in stream or the identity. 
 
 &nbsp;
 
