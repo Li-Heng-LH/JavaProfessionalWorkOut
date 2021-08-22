@@ -152,7 +152,8 @@
 | findAny(), findFirst()                                            	| return an element of the stream unless the stream is empty 	| Optional<T> findAny()                                                                                                                                                                             	| Optional<T> 	| No         	| Terminates                        	|
 | allMatch(Predicate), anyMatch(Predicate) and noneMatch(Predicate) 	| search a stream and return boolean                         	| boolean anyMatch(Predicate <? super T> predicate)                                                                                                                                                 	| boolean     	| No         	| May or may not terminate          	|
 | forEach(Consumer)                                                 	|                                                            	| void forEach(Consumer<? super T> action)                                                                                                                                                          	| void        	| No         	| Does not terminate                	|
-| reduce()                                                          	| combines a stream into a single object                     	| T reduce(T identity, BinaryOperator<T> accumulator) Optional<T> reduce(BinaryOperator<T> accumulator) <U> U reduce(U identity, BiFunction<U,? super T,U> accumulator, BinaryOperator<U> combiner) 	|             	| Yes        	| Does not terminate                	|
+| reduce()                                                          	| combines a stream into a single object                     	| T reduce(T identity, BinaryOperator<T> accumulator) Optional<T> reduce(BinaryOperator<T> accumulator) <U> U reduce(U identity, BiFunction<U,? super T,U> accumulator, BinaryOperator<U> combiner) 	| T or <T>    	| Yes        	| Does not terminate                	|
+| collect()                                                         	| special type of reduction                                  	| <R> R collect(Supplier<R> supplier, BiConsumer<R, ? super T> accumulator, BiConsumer<R, R> combiner) <R,A> R collect(Collector<? super T, A,R> collector)                                         	| R           	| Yes        	| Does not terminate                	|
 
 * `findany()` vs `findfirst()`: findAny() is useful when working with parallel stream
 * **Reduction is a special type of terminal operation where all contents of the stream are combined into a single primitive or Object.** 
@@ -166,8 +167,14 @@
   * To differentiate if the returned value is in stream or the identity. 
 * Purpose of `<U> U reduce(U identity, BiFunction<U,? super T,U> accumulator, BinaryOperator<U> combiner)`
   * used when processing collections in parallel
-* The collect() method is a special reduction: _mutable reduction_. 
+* The `collect()` method is a special reduction: _mutable reduction_. 
   * more efficient than regular reduction as we use the same mutable object while accumulating.
+  * Common mutable objects include `StringBuilder` and `ArrayList`
+* What is the purpose of `accumulator` in `collect()` ?
+  * takes in StringBuilder and String, and do something with the StringBuilder and String. 
+* What is the purpose of `combiner` in `collect()` ? 
+  * takes in 2 StringBuilders and do something with them. 
+  * useful for parallel processing.
 
 &nbsp;
 

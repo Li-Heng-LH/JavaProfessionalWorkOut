@@ -1,6 +1,8 @@
 package me.liheng.streamAPI;
 
 import java.util.Optional;
+import java.util.function.BiConsumer;
+import java.util.function.BinaryOperator;
 import java.util.stream.Stream;
 
 public class TerminalOperations {
@@ -11,6 +13,7 @@ public class TerminalOperations {
         find();
         match();
         reduce();
+        collect();
     }
 
     // count() method determines the number of elements in a finite stream
@@ -58,6 +61,16 @@ public class TerminalOperations {
     private static void reduce() {
 
         // T reduce(T identity, BinaryOperator<T> accumulator)
+        System.out.println(
+                Stream.of("w", "o", "l", "f")
+                        .reduce("", new BinaryOperator<String>() {
+                            @Override
+                            public String apply(String s, String s2) {
+                                return s + s2;
+                            }
+                        })
+        );
+
         // lambda way
         System.out.println(
                 Stream.of("w", "o", "l", "f")
@@ -126,5 +139,40 @@ public class TerminalOperations {
         System.out.println(
                 Stream.of(1, 2, 3, 4).reduce(0, Integer::sum, Integer::sum)
         );
+    }
+
+    private static void collect() {
+        // <R> R collect(Supplier<R> supplier,
+        // BiConsumer<R, ? super T> accumulator,
+        // BiConsumer<R, R> combiner)
+        Stream<String> stream = Stream.of("w", "o", "l", "f");
+        StringBuilder word = stream.collect(StringBuilder::new,
+                new BiConsumer<StringBuilder, String>() {
+                    @Override
+                    public void accept(StringBuilder stringBuilder, String s) {
+                        stringBuilder.append(s);
+                    }
+                },
+                new BiConsumer<StringBuilder, StringBuilder>() {
+                    @Override
+                    public void accept(StringBuilder stringBuilder, StringBuilder stringBuilder2) {
+                        stringBuilder.append(stringBuilder2);
+                    }
+                });
+        System.out.println(word);
+
+        //lambda way
+        StringBuilder word2 = Stream.of("w", "o", "r", "d", "2")
+                .collect(StringBuilder::new,
+                        (sb, s) -> sb.append(s),
+                        (sb1, sb2) -> sb1.append(sb2));
+        System.out.println(word2);
+
+        //method reference
+        StringBuilder word3 = Stream.of("w", "o", "r", "d", "3")
+                .collect(StringBuilder::new,
+                        StringBuilder::append,
+                        StringBuilder::append);
+        System.out.println(word3);
     }
 }
