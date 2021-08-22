@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
@@ -18,6 +19,7 @@ public class FourFormats {
         staticMethodFormat();
         instanceMethodOnInstance();
         instanceMethodOnRuntimeInstance();
+        instanceMethodOnRuntimeInstanceWithParameter();
         constructorFormat();
     }
 
@@ -48,6 +50,11 @@ public class FourFormats {
 
         System.out.println(predicate2.test(""));
         System.out.println(predicate2.test("abc"));
+    }
+
+    private void instanceMethodOnRuntimeInstanceWithParameter() {
+        BinaryOperator<String> binaryOperator = String::concat;
+        System.out.println(binaryOperator.apply("ABC","DEF"));
     }
 
     private void constructorFormat() {
