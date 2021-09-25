@@ -1,6 +1,7 @@
 package me.liheng.streamAPI;
 
 import java.util.Optional;
+import java.util.TreeSet;
 import java.util.function.BiConsumer;
 import java.util.function.BinaryOperator;
 import java.util.stream.Stream;
@@ -174,5 +175,12 @@ public class TerminalOperations {
                         StringBuilder::append,
                         StringBuilder::append);
         System.out.println(word3);
+        
+        //Different accumulator and combiner
+        TreeSet<String> word4 = Stream.of("w", "o", "r", "d", "4").
+                collect(TreeSet::new,
+                        TreeSet::add,
+                        TreeSet::addAll);
+        System.out.println(word4);
     }
 }
