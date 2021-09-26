@@ -1,9 +1,12 @@
 package me.liheng.streamAPI;
 
+import java.util.HashSet;
 import java.util.Optional;
+import java.util.Set;
 import java.util.TreeSet;
 import java.util.function.BiConsumer;
 import java.util.function.BinaryOperator;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class TerminalOperations {
@@ -182,5 +185,16 @@ public class TerminalOperations {
                         TreeSet::add,
                         TreeSet::addAll);
         System.out.println(word4);
+
+        //common collectors
+        //Collectors.toCollection(Supplier): Returns a Collector that accumulates the input elements into a new Collection
+        TreeSet<String> word5 = Stream.of("w", "o", "r", "d", "5").
+                collect(Collectors.toCollection(TreeSet::new));
+        System.out.println(word5);
+
+        //Collectors.toSet()
+        Set<String> word6 = Stream.of("w", "o", "r", "d", "6").
+                collect(Collectors.toSet());
+        System.out.println(word6);
     }
 }
