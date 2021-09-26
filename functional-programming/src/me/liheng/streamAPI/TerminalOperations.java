@@ -180,21 +180,23 @@ public class TerminalOperations {
         System.out.println(word3);
         
         //Different accumulator and combiner
-        TreeSet<String> word4 = Stream.of("w", "o", "r", "d", "4").
-                collect(TreeSet::new,
+        TreeSet<String> word4 = Stream.of("w", "o", "r", "d", "4")
+                .collect(TreeSet::new,
                         TreeSet::add,
                         TreeSet::addAll);
         System.out.println(word4);
 
         //common collectors
         //Collectors.toCollection(Supplier): Returns a Collector that accumulates the input elements into a new Collection
-        TreeSet<String> word5 = Stream.of("w", "o", "r", "d", "5").
-                collect(Collectors.toCollection(TreeSet::new));
+        TreeSet<String> word5 = Stream.of("w", "o", "r", "d", "5")
+                .collect(Collectors.toCollection(TreeSet::new));
         System.out.println(word5);
 
         //Collectors.toSet()
-        Set<String> word6 = Stream.of("w", "o", "r", "d", "6").
-                collect(Collectors.toSet());
+        Set<String> word6 = Stream.of("w", "o", "r", "d", "6")
+                .collect(Collectors.toSet());
+        //toSet() makes no guarantees as to which implementation of Set you’ll get.
+        //It is likely to be a HashSet, but you shouldn’t expect or rely on that.
         System.out.println(word6);
     }
 }
