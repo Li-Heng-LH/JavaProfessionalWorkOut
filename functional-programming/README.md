@@ -181,8 +181,33 @@
 ### Common Intermediate Operations ###
 
 #### filter ####
-* Returns a Stream with elements that match the predicate.
 * `Stream<T> filter(Predicate<? super T> predicate)`
+* Returns a Stream with elements that match the predicate.
+
+&nbsp;
+
+#### distinct ####
+* `Stream<T> distinct()`
+* returns a stream with duplicate values removed
+* `equals()` is used to compare
+
+&nbsp;
+
+#### limit() and skip() ####
+* `Stream<T> skip(long n)`
+* returns a stream by skipping the first n elements. 
+* `Stream<T> limit(long maxSize)`
+* returns a stream by truncating till max size. 
+
+&nbsp;
+
+#### map() ####
+* 
+
+&nbsp;
+
+####  ####
+* 
 
 &nbsp;
 

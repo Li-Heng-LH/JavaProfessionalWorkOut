@@ -31,8 +31,19 @@ public class ArrayAndArrayList {
         printList(list);     //One Two C
         printArray(array2);  //A B C
 
-        System.out.println("Trying to add element to list...");
-        list.add("D");       //UnsupportedOperationException. list is not resizable
+        try {
+            System.out.println("Trying to remove first element from list...");
+            list.remove(0); //UnsupportedOperationException. list is not resizable
+        } catch (Exception e) {
+            System.out.println("Cannot remove: " + e);
+        }
+
+        try {
+            System.out.println("Trying to add element to list...");
+            list.add("D");       //UnsupportedOperationException. list is not resizable
+        } catch (Exception e) {
+            System.out.println("Cannot add: " + e);
+        }
     }
 
 

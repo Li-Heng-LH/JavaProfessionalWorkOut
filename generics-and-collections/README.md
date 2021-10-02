@@ -7,6 +7,10 @@
 * `List<String> list = Arrays.asList(array); `   
   Returns a **fixed-size** list **backed** by the specified array. (Changes to the returned list "write through" to the array.)  
   Changes in list <--> Changes in array
+* Arrays.asList() takes in an array 
+  * the list returned is backed by the array
+  * Modifications made on either one will reflect on the other, in both ways.
+  * The returned list can be modified, but cannot change size (neither add nor remove). 
 * `toArray()` will return a new array.
 
 &nbsp;
@@ -84,7 +88,7 @@ if the **generic type is specified in the declaration**. -->
 * `List<Integer>` can now be assigned to `List<? extends Number>`
 * function `total(List<? extends Number> list)` can take in `List<Integer>`
 * What is NOT allowed? 
-  * Cannot add any entry to a `List<? extends Number>`. This is because Java does not what the actual type is and 
+  * Cannot **add** any entry to a `List<? extends Number>`. This is because Java does not what the actual type is and 
   afraid of type cast exceptions later. 
   * I can only loop through a `List<? extends Number>` treating each entry as `Number`.
 * So how is Upper-Bounded Wildcards more useful than Unbounded Wildcards?  
