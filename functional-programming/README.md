@@ -3,6 +3,19 @@
 
 ## Some Learning Notes ##
 
+### Revision on wildcards ###
+* `List<String>` is not a `List<Object>`,   
+  therefore we need `List<?>`.
+* In a `List<? extends Animal>`, every element can be treated as Animal,  
+  because the list can contain Cats and Dogs, but all share Animal common methods.
+* `List<? extends Animal>` can remove an element. 
+* `List<? extends Animal>` cannot add an element, because Java does not know exactly what elements are in the list. 
+* In `List<? super Dog>`, cannot treat each element as Dog,   
+  because the list can contain an Animal, that does not have bark(). 
+* `List<? super Dog>` can add a Dog, because Dog has all Animal's or Mammal's methods.
+
+&nbsp;
+
 ### Using Variables in Lambdas ###
 * Lambdas can use these variables: 
   * static variables
@@ -202,7 +215,8 @@
 &nbsp;
 
 #### map() ####
-* 
+* `<R> Stream<R> map(Function<? super T, ? extends R> mapper)`
+* returns a stream by applying the one-to-one mapper. 
 
 &nbsp;
 
