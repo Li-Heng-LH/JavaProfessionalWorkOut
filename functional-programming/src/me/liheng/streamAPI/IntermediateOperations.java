@@ -13,6 +13,8 @@ public class IntermediateOperations {
         System.out.println("\nskip:");
         skip();
 
+        System.out.println("\nmap:");
+        map();
     }
 
     //Stream<T> filter(Predicate<? super T> predicate)
@@ -34,6 +36,18 @@ public class IntermediateOperations {
         Stream<Integer> s = Stream.iterate(1, n -> n+1);
         s.skip(5)
                 .limit(2)
+                .forEach(System.out::println);
+    }
+
+    private static void map() {
+        Stream<String> s1 = Stream.of("monkey", "gorilla", "bonobo");
+        //lambda
+        s1.map(e -> e.length())
+                .forEach(System.out::println);
+
+        Stream<String> s2 = Stream.of("a", "aa", "aaa");
+        //method reference, Instance methods on an instance to be passed in at runtime
+        s2.map(String::length)
                 .forEach(System.out::println);
     }
 }
