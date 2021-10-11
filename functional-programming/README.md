@@ -234,6 +234,17 @@
 
 &nbsp;
 
+#### sorted() ####
+* `Stream<T> sorted()`
+* `Stream<T> sorted(Comparator<? super T> comparator)`
+
+&nbsp;
+
+#### () ####
+* 
+
+&nbsp;
+
 &nbsp;
 ----
 ### Useful links ###

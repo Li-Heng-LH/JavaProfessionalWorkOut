@@ -2,6 +2,7 @@ package me.liheng.streamAPI;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -21,6 +22,9 @@ public class IntermediateOperations {
 
         System.out.println("\nflatMap:");
         flatMap();
+
+        System.out.println("\nsorted:");
+        sorted();
     }
 
     //Stream<T> filter(Predicate<? super T> predicate)
@@ -70,4 +74,14 @@ public class IntermediateOperations {
         Stream<List<String>> s = Stream.of(zero, one, two);
         s.flatMap(Collection::stream).forEach(System.out::println);
     }
+
+    private static void sorted() {
+        Stream<String> s1 = Stream.of("B", "a", "A", "c");
+        s1.sorted().forEach(System.out::println);
+
+        Stream<String> s2 = Stream.of("B", "a", "A", "c");
+        s2.sorted(Comparator.reverseOrder()).forEach(System.out::println);
+    }
+
+
 }
