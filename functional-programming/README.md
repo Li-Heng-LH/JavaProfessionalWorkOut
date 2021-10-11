@@ -240,8 +240,11 @@
 
 &nbsp;
 
-#### () ####
-* 
+#### peek() ####
+* `Stream<T> peek(Consumer<? super T> action)`
+* Returns a stream consisting of the elements of this stream, 
+* additionally performing the provided action. 
+* Useful for debugging.
 
 &nbsp;
 

@@ -1,9 +1,6 @@
 package me.liheng.streamAPI;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Stream;
 
 public class IntermediateOperations {
@@ -25,6 +22,9 @@ public class IntermediateOperations {
 
         System.out.println("\nsorted:");
         sorted();
+
+        System.out.println("\npeek:");
+        peek();
     }
 
     //Stream<T> filter(Predicate<? super T> predicate)
@@ -83,5 +83,19 @@ public class IntermediateOperations {
         s2.sorted(Comparator.reverseOrder()).forEach(System.out::println);
     }
 
+    private static void peek() {
+        Stream<String> stream = Stream.of("one", "two", "three", "four");
+        List<String> list = stream.filter(s -> s.length() > 3)
+                .peek(e -> System.out.println("Filtered value: " + e))
+                .map(String::toUpperCase)
+                .peek(e -> System.out.println("Mapped value: " + e))
+                .collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
+        //Filtered value: three
+        //Mapped value: THREE
+        //Filtered value: four
+        //Mapped value: FOUR
+
+        list.forEach(System.out::println);
+    }
 
 }
