@@ -1,5 +1,8 @@
 package me.liheng.streamAPI;
 
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 import java.util.stream.Stream;
 
 public class IntermediateOperations {
@@ -15,6 +18,9 @@ public class IntermediateOperations {
 
         System.out.println("\nmap:");
         map();
+
+        System.out.println("\nflatMap:");
+        flatMap();
     }
 
     //Stream<T> filter(Predicate<? super T> predicate)
@@ -49,5 +55,19 @@ public class IntermediateOperations {
         //method reference, Instance methods on an instance to be passed in at runtime
         s2.map(String::length)
                 .forEach(System.out::println);
+    }
+
+    private static void flatMap() {
+        List<String> zero = Arrays.asList();
+        List<String> one = Arrays.asList("one");
+        List<String> two = Arrays.asList("two", "three");
+
+        Stream<List<String>> originalStream = Stream.of(zero, one, two);
+        Stream<String> flattenedStream = originalStream.flatMap(l -> l.stream());
+        flattenedStream.forEach(System.out::println);
+
+        //Use method reference
+        Stream<List<String>> s = Stream.of(zero, one, two);
+        s.flatMap(Collection::stream).forEach(System.out::println);
     }
 }

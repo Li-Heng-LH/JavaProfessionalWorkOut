@@ -226,8 +226,11 @@
 
 &nbsp;
 
-####  ####
-* 
+#### flatMap() ####
+* Turns `Stream<List<String>>` into `Stream<String>`.
+* empty list will be omitted. 
+* the mapper function is one that turns list into Stream, `l -> l.stream()`
+* Can use method reference: `Collection::stream` (Instance mehod on running instance)
 
 &nbsp;
 
