@@ -244,7 +244,8 @@
 * `Stream<T> peek(Consumer<? super T> action)`
 * Returns a stream consisting of the elements of this stream, 
 * additionally performing the provided action. 
-* Useful for debugging.
+* Useful for debugging, where you want to see the elements as they flow past a certain point in a pipeline.
+* Danger of using `peek()`: may change the state of elements in the stream. 
 
 &nbsp;
 

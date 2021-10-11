@@ -96,6 +96,15 @@ public class IntermediateOperations {
         //Mapped value: FOUR
 
         list.forEach(System.out::println);
-    }
 
+        System.out.println("Danger of using peek(): may change the state of elements in the stream.");
+        List<Integer> numbers = new ArrayList<>();
+        List<Character> letters = new ArrayList<>();
+        numbers.add(1);
+        letters.add('a');
+        Stream<List<?>> s = Stream.of(numbers, letters);
+        s.peek(l -> l.remove(0))
+                .map(List::size)
+                .forEach(System.out::println);
+    }
 }
