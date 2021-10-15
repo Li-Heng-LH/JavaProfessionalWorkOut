@@ -237,6 +237,8 @@
 #### sorted() ####
 * `Stream<T> sorted()`
 * `Stream<T> sorted(Comparator<? super T> comparator)`
+* If the elements passed into sorted() is infinite, sorted() does not terminate, 
+  sorted() needs to wait until everything to sort is present. 
 
 &nbsp;
 
