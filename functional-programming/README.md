@@ -251,6 +251,18 @@
 
 &nbsp;
 
+### Ways to initialise a primitive stream ### 
+* `DoubleStream.of()`
+* `DoubleStream.empty()`
+* `DoubleStream.generate(Math::random)`
+* `DoubleStream.iterate(T seed, UnaryOperator<T> f)`
+* `IntStream.range(1, 6)`
+* `IntStream.rangeClosed(1, 5)`
+
+### Using Optional with Primitive Streams ###
+* `OptionalDouble` vs `Optional<Double>`:   
+  * The difference is that OptionalDouble is for a primitive and Optional<Double> is for the Double wrapper class. 
+
 &nbsp;
 ----
 ### Useful links ###
