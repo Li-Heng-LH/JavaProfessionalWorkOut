@@ -1,5 +1,6 @@
 package me.liheng.primitiveStream;
 
+import java.util.IntSummaryStatistics;
 import java.util.OptionalDouble;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
@@ -30,5 +31,17 @@ public class Usage {
         System.out.println();
         DoubleStream doubleStream = DoubleStream.of(1, 2, 3);
         doubleStream.forEach(System.out::println);
+
+        System.out.println();
+        statistics();
+    }
+
+    private static void statistics() {
+        IntStream ints = IntStream.of(1, 2, 3, 4, 5);
+        IntSummaryStatistics stats = ints.summaryStatistics();
+        if (stats.getCount() == 0) throw new RuntimeException();
+        System.out.println(stats.getCount());
+        System.out.println(stats.getAverage());
+        System.out.println(stats.getMax() - stats.getMin());
     }
 }

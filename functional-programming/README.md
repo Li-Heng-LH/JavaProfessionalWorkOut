@@ -263,6 +263,11 @@
 * `OptionalDouble` vs `Optional<Double>`:   
   * The difference is that OptionalDouble is for a primitive and Optional<Double> is for the Double wrapper class. 
 
+### Statistics ###
+* `IntSummaryStatistics stats = ints.summaryStatistics();`
+* `stats.getMax()`
+* `stats.getMin()`
+
 &nbsp;
 ----
 ### Useful links ###
