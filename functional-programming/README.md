@@ -269,6 +269,21 @@
 * `stats.getMin()`
 
 &nbsp;
+
+### Linking Streams to the Underlying Data ###
+* Get `.stream()` from an ArrayList, 
+* streams are lazily evaluated
+* when terminal operation is reached, 
+* stream pipeline then looks at the source and starts running. 
+
+&nbsp;
+
+### ###
+* 
+
+&nbsp;
+
+&nbsp;
 ----
 ### Useful links ###
 * []()
