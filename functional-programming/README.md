@@ -114,16 +114,17 @@
 &nbsp;
 
 ### Optional instance methods ###
-| Method                      | When Optional Is Empty                                                | When Optional Contains a Value                                                    |
-|-----------------------------|-----------------------------------------------------------------------|-----------------------------------------------------------------------------------|
-| get()                       | Throws an exception                                                   | Returns value                                                                     |
-| isPresent()                 | false                                                                 | true                                                                              |
-| ifPresent(Consumer c)       | Does nothing                                                          | Calls Consumer c with value                                                       |
-| orElse(T other)             | Returns other                                                         | Returns value                                                                     |
-| orElseGet(Supplier s)       | Returns result of calling Supplier (That returns T)                   | Returns value                                                                     |
-| orElseThrow(Supplier s)     | Throws exception created by calling Supplier (That returns Throwable) | Returns value                                                                     |
-| map(Function mapper)        | Returns empty Optional                                                | Apply the provided mapping function to it                                         |
-| filter(Predicate predicate) | Returns empty Optional                                                | If the value matches the given predicate, return an Optional describing the value |
+| Method                      | When Optional Is Empty                                                | When Optional Contains a Value                                                                                                         |
+|-----------------------------|-----------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| get()                       | Throws an exception                                                   | Returns value                                                                                                                          |
+| isPresent()                 | false                                                                 | true                                                                                                                                   |
+| ifPresent(Consumer c)       | Does nothing                                                          | Calls Consumer c with value                                                                                                            |
+| orElse(T other)             | Returns other                                                         | Returns value                                                                                                                          |
+| orElseGet(Supplier s)       | Returns result of calling Supplier (That returns T)                   | Returns value                                                                                                                          |
+| orElseThrow(Supplier s)     | Throws exception created by calling Supplier (That returns Throwable) | Returns value                                                                                                                          |
+| map(Function mapper)        | Returns empty Optional                                                | Apply the provided mapping function to it, and if the result is non-null, return an Optional describing the result                     |
+| filter(Predicate predicate) | Returns empty Optional                                                | If the value matches the given predicate, return an Optional describing the value                                                      |
+| flatMap()                   | Returns empty Optional                                                | Apply the provided Optional-returning mapping function to it, return that result, flatMap does not wrap it with an additional Optional |
 
 &nbsp;
 
@@ -232,7 +233,7 @@
 * Turns `Stream<List<String>>` into `Stream<String>`.
 * empty list will be omitted. 
 * the mapper function is one that turns list into Stream, `l -> l.stream()`
-* Can use method reference: `Collection::stream` (Instance mehod on running instance)
+* Can use method reference: `Collection::stream` (Instance method on running instance)
 
 &nbsp;
 
@@ -280,8 +281,8 @@
 
 &nbsp;
 
-### Chaining Optionals ###
-* 
+### optional.map vs optional.flatMap ###
+* mapper function in flatMap returns an Optional
 
 &nbsp;
 
