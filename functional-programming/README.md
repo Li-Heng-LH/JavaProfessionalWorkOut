@@ -233,6 +233,7 @@
 * Turns `Stream<List<String>>` into `Stream<String>`.
 * empty list will be omitted. 
 * the mapper function is one that turns list into Stream, `l -> l.stream()`
+* NOTE: the mapper function returns a Stream. 
 * Can use method reference: `Collection::stream` (Instance method on running instance)
 
 &nbsp;
@@ -283,6 +284,19 @@
 
 ### optional.map vs optional.flatMap ###
 * mapper function in flatMap returns an Optional
+
+&nbsp;
+
+### Mapper functions in flatMaps ###
+* Stream.flatMap:  
+  Both mapper function and method return Stream
+* Optional.flatMap:  
+  Both mapper function and method return Optional
+
+&nbsp;
+
+###  ###
+* 
 
 &nbsp;
 
