@@ -225,7 +225,7 @@ from the beginning and end of the list in constant time.
   And it should be used in preference to the legacy Stack class. 
   * ArrayDeque is more efficient than the LinkedList for add and remove operation at both ends.
   * ArrayDeque is likely to be faster than Stack when used as a stack, and faster than LinkedList when used as a queue.
-  * Therefore, use ArrayDeque to implement both queue and stack.
+  * Therefore, **use ArrayDeque to implement both queue and stack**.
 
 &nbsp;
 

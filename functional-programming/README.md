@@ -295,8 +295,9 @@
 
 &nbsp;
 
-###  ###
-* 
+### reduce() vs collect() ###
+* reduce() takes in identity and BinaryOperator
+* collect() takes in Supplier and BiConsumer
 
 &nbsp;
 
