@@ -17,7 +17,6 @@
 &nbsp;
 
 ### Revision on Method References ###
-* 
 * Instance methods on an instance to be passed in at runtime. 
 
 &nbsp;
