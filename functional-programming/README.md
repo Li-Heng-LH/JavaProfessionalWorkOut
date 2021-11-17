@@ -300,6 +300,14 @@
 
 &nbsp;
 
+### collect, Collector, and Collectors ###
+* stream.collect()
+* stream.collect() can take in a Collector
+* Collector.of() can create a Collector
+* 
+
+&nbsp;
+
 &nbsp;
 ----
 ### Useful links ###
