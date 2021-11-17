@@ -300,6 +300,14 @@
 
 &nbsp;
 
+### mapper function lambda examples ###
+* `aKnownList::contains`
+* `aKnownSet::contains`
+* `String::isEmpty`
+* `String::length`
+
+&nbsp;
+
 ### collect, Collector, and Collectors ###
 * stream.collect()
 * stream.collect() can take in a Collector
