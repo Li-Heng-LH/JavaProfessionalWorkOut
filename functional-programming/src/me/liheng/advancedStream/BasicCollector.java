@@ -5,7 +5,7 @@ import java.util.TreeSet;
 import java.util.stream.Collector;
 import java.util.stream.Stream;
 
-public class AdvancedCollector {
+public class BasicCollector {
 
     public static void main(String[] args) {
         useCollectorOf();

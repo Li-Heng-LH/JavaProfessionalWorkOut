@@ -312,7 +312,7 @@
 * stream.collect()
 * stream.collect() can take in a Collector
 * Collector.of() can create a Collector
-* 
+* Collectors can be used to obtain a predefined Collector.
 
 &nbsp;
 
