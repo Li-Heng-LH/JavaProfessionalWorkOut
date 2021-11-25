@@ -6,7 +6,7 @@ import java.util.stream.Stream;
 public class AdvancedCollectors {
 
     public static void main(String[] args) {
-        joining();
+        averaging();
     }
 
     //Only applicable to Stream<String>
@@ -18,5 +18,11 @@ public class AdvancedCollectors {
         str = Stream.of ("a", "b", "c")
                 .collect(Collectors.joining(","));  //smart, the last element will not have ,
         System.out.println(str);  //a,b,c
+    }
+
+    private static void averaging() {
+        Stream<String> ohMy = Stream.of("lions", "tigers", "bears");
+        Double result = ohMy.collect(Collectors.averagingInt(String::length));
+        System.out.println(result);
     }
 }
