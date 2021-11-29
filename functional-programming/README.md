@@ -316,6 +316,24 @@
 
 &nbsp;
 
+### Advanced Collectors ###
+| Collector                                                 | Description                                                                                                                                                   | Return Value When Passed to collect | Notes                                    |
+|-----------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------|------------------------------------------|
+| Collectors.toList()                                       |                                                                                                                                                               |                                     |                                          |
+| Collectors.toSet()                                        |                                                                                                                                                               |                                     |                                          |
+| toCollection(Supplier s)                                  |                                                                                                                                                               |                                     |                                          |
+| joining()                                                 | Creates a String from elements                                                                                                                                | String                              | Only applicable to Stream<String>        |
+| joining(CharSequence cs)                                  | Creates a String from elements using cs as delimiter                                                                                                          | String                              | The last element will not have delimiter |
+| averagingDouble(ToDoubleFunction f)                       |                                                                                                                                                               | Double                              |                                          |
+| averagingInt(ToIntFunction f)                             |                                                                                                                                                               | Double                              |                                          |
+| averagingLong(ToLongFunction f)                           |                                                                                                                                                               | Double                              |                                          |
+| toMap(keyMapper, valueMapper)                             | keys and values are the result of applying the provided mapping functions to the input elements                                                               |                                     |                                          |
+| toMap(keyMapper, valueMapper, mergeFunction)              | If the mapped keys contains duplicates, mapping function is applied to each equal element, <br>and the results are merged using the provided merging function |                                     |                                          |
+| toMap(keyMapper, valueMapper, mergeFunction, mapSupplier) |                                                                                                                                                               |                                     |                                          |
+|                                                           |                                                                                                                                                               |                                     |                                          |
+
+&nbsp;
+
 &nbsp;
 ----
 ### Useful links ###
