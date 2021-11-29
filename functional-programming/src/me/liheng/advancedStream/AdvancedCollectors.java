@@ -1,12 +1,13 @@
 package me.liheng.advancedStream;
 
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class AdvancedCollectors {
 
     public static void main(String[] args) {
-        averaging();
+        CollectingToMaps();
     }
 
     //Only applicable to Stream<String>
@@ -24,5 +25,12 @@ public class AdvancedCollectors {
         Stream<String> ohMy = Stream.of("lions", "tigers", "bears");
         Double result = ohMy.collect(Collectors.averagingInt(String::length));
         System.out.println(result);
+    }
+    
+    private static void CollectingToMaps() {
+        //straightforward example
+        Stream<String> ohMy = Stream.of("lions", "tigers", "bears");
+        Map<String, Integer> map = ohMy.collect(Collectors.toMap(s -> s, String::length));
+        System.out.println(map);
     }
 }
