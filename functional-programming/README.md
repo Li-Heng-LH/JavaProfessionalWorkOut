@@ -330,7 +330,9 @@
 | toMap(keyMapper, valueMapper)                             | keys and values are the result of applying the provided mapping functions to the input elements                                                               |                                     |                                          |
 | toMap(keyMapper, valueMapper, mergeFunction)              | If the mapped keys contains duplicates, mapping function is applied to each equal element, <br>and the results are merged using the provided merging function |                                     |                                          |
 | toMap(keyMapper, valueMapper, mergeFunction, mapSupplier) |                                                                                                                                                               |                                     |                                          |
-|                                                           |                                                                                                                                                               |                                     |                                          |
+| groupingBy(classifier)                                    | classifier maps elements to some key type K, collector produces a Map<K, List<T>>                                                                             |                                     |                                          |
+| groupingBy(classifier, downstreamCollector)               | downstreamCollector is applied to the values                                                                                                                  |                                     |                                          |
+| groupingBy(classifier, mapFactory, downstreamCollector)   | change the type of Map returned                                                                                                                               |                                     |                                          |
 
 &nbsp;
 

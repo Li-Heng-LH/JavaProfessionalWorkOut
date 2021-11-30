@@ -1,15 +1,13 @@
 package me.liheng.advancedStream;
 
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class AdvancedCollectors {
 
     public static void main(String[] args) {
-        CollectingToMaps();
+        groupingBy();
     }
 
     //Only applicable to Stream<String>
@@ -60,5 +58,22 @@ public class AdvancedCollectors {
         Stream<String> ohMy = Stream.of("lions", "tigers", "bears");
         Map<Integer, List<String>> map = ohMy.collect(Collectors.groupingBy(String::length));
         System.out.println(map); // {5=[lions, bears], 6=[tigers]}
+
+        //what if we prefer Set?
+        //groupingBy(classifier, downstreamCollector)
+        //downstreamCollector is applied to the values
+        ohMy = Stream.of("lions", "tigers", "bears");
+        Map<Integer, Set<String>> map2 = ohMy.collect(Collectors.groupingBy(String::length, Collectors.toSet()));
+        System.out.println(map2); // {5=[lions, bears], 6=[tigers]}
+
+        //change the type of Map returned
+        //groupingBy(classifier, mapFactory, downstreamCollector)
+        ohMy = Stream.of("lions", "tigers", "bears");
+        Map<Integer, Set<String>> map3 = ohMy.collect(
+                Collectors.groupingBy(
+                        String::length,
+                        TreeMap::new,
+                        Collectors.toSet()));
+        System.out.println(map3.getClass()); // class java.util.TreeMap
     }
 }

@@ -1,14 +1,14 @@
 package me.liheng.advancedStream;
 
-import java.util.Comparator;
-import java.util.TreeSet;
+import java.util.*;
 import java.util.stream.Collector;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class BasicCollector {
 
     public static void main(String[] args) {
-        useCollectorOf();
+        toCollection();
     }
 
     //Collector.of
@@ -36,5 +36,20 @@ public class BasicCollector {
                 .collect(collector);
 
         System.out.println(res);
+    }
+
+    private static void toCollection() {
+        Set<String> set =
+                Stream.of("a", "b", "c")
+                .collect(Collectors.toSet());
+        System.out.println(set);
+
+        List<String> list = Stream.of("a", "b", "c")
+                .collect(Collectors.toList());
+        System.out.println(list);
+
+        LinkedList <String> linkedList = Stream.of("a", "b", "c")
+                .collect(Collectors.toCollection(LinkedList::new));
+        System.out.println(linkedList);
     }
 }
