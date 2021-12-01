@@ -7,14 +7,14 @@ import java.util.stream.Stream;
 public class AdvancedCollectors {
 
     public static void main(String[] args) {
-        groupingBy();
+        partitioningBy();
     }
 
     //Only applicable to Stream<String>
     private static void joining() {
         String str = Stream.of ("a", "b", "c")
                 .collect(Collectors.joining());
-        System.out.println(str);
+        System.out.println(str); //abc
 
         str = Stream.of ("a", "b", "c")
                 .collect(Collectors.joining(","));  //smart, the last element will not have ,
@@ -27,7 +27,7 @@ public class AdvancedCollectors {
         System.out.println(result);
     }
     
-    private static void CollectingToMaps() {
+    private static void collectingToMaps() {
         //straightforward example
         Stream<String> ohMy = Stream.of("lions", "tigers", "bears");
         Map<String, Integer> map = ohMy.collect(Collectors.toMap(s -> s, String::length));
@@ -75,5 +75,35 @@ public class AdvancedCollectors {
                         TreeMap::new,
                         Collectors.toSet()));
         System.out.println(map3.getClass()); // class java.util.TreeMap
+    }
+
+    private static void partitioningBy() {
+        //partitioningBy(predicate) -> Map<Boolean,List<T>>
+        //With partitioning, there are only two possible groups: true and false.
+        Stream<String> ohMy = Stream.of("lions", "tigers", "bears");
+        Map<Boolean, List<String>> map = ohMy.collect(
+                Collectors.partitioningBy(e -> e.length() > 5));
+        System.out.println(map); // {false=[lions, bears], true=[tigers]}
+
+        //There will always be two keys in the map
+        //no elements -> empty list
+        ohMy = Stream.of("lions", "tigers", "bears");
+        map = ohMy.collect(
+                Collectors.partitioningBy(e -> e.length() > 100));
+        System.out.println(map); // {false=[lions, tigers, bears], true=[]}
+
+        //partitioningBy(predicate, downstreamCollector)
+        ohMy = Stream.of("lions", "tigers", "bears");
+        Map<Boolean, Set<String>> map2 = ohMy.collect(
+                Collectors.partitioningBy(s -> s.length() > 5, Collectors.toSet())
+        );
+        System.out.println(map2); // {false=[lions, bears], true=[tigers]}
+
+        //partition + counting
+        ohMy = Stream.of("lions", "tigers", "bears");
+        Map<Boolean, Long> map3 = ohMy.collect(
+                Collectors.partitioningBy(e -> e.length() > 5, Collectors.counting())
+        );
+        System.out.println(map3); // {false=2, true=1}
     }
 }
