@@ -7,7 +7,7 @@ import java.util.stream.Stream;
 public class AdvancedCollectors {
 
     public static void main(String[] args) {
-        partitioningBy();
+        groupingBy();
     }
 
     //Only applicable to Stream<String>
@@ -65,6 +65,16 @@ public class AdvancedCollectors {
         ohMy = Stream.of("lions", "tigers", "bears");
         Map<Integer, Set<String>> map2 = ohMy.collect(Collectors.groupingBy(String::length, Collectors.toSet()));
         System.out.println(map2); // {5=[lions, bears], 6=[tigers]}
+
+        //grouping + counting
+        ohMy = Stream.of("lions", "tigers", "bears");
+        Map<Integer, Long> map4 = ohMy.collect(
+                Collectors.groupingBy(
+                        String::length,
+                        Collectors.counting()
+                )
+        );
+        System.out.println(map4); // {5=2, 6=1}
 
         //change the type of Map returned
         //groupingBy(classifier, mapFactory, downstreamCollector)
