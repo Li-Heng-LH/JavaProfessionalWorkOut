@@ -7,7 +7,7 @@ import java.util.stream.Stream;
 public class AdvancedCollectors {
 
     public static void main(String[] args) {
-        groupingBy();
+        minBy();
     }
 
     //Only applicable to Stream<String>
@@ -115,5 +115,11 @@ public class AdvancedCollectors {
                 Collectors.partitioningBy(e -> e.length() > 5, Collectors.counting())
         );
         System.out.println(map3); // {false=2, true=1}
+    }
+
+    private static void minBy() {
+        Stream<String> ohMy = Stream.of("lions", "tigers", "bears");
+        ohMy.collect(Collectors.minBy(Comparator.naturalOrder()))
+                .ifPresent(System.out::println);
     }
 }

@@ -335,7 +335,11 @@
 | groupingBy(classifier, mapFactory, downstreamCollector)   | change the type of Map returned                                                                                                                               |                                     |                                          |
 | partitioningBy(predicate)                                 | With partitioning, there are only two possible groups: true and false.                                                                                        | Map<Boolean,List<T>>                |                                          |
 | partitioningBy(predicate, downstreamCollector)            | reduces the values in each partition according to downstreamCollector                                                                                         |                                     |                                          |
-| counting()                                                | Counts number of elements                                                                                                                                     | long                                |                                          |
+| counting()                                                | Counts number of elements                                                                                                                                     | Long                                |                                          |
+| minBy(comparator)                                         |                                                                                                                                                               | Optional minimal element            |                                          |
+|                                                           |                                                                                                                                                               |                                     |                                          |
+
+* I can collect into Long, String, Double, Optional<T>, Map, List, Set...
 
 &nbsp;
 
