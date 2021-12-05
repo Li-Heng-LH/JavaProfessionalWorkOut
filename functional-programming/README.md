@@ -337,10 +337,10 @@
 | partitioningBy(predicate, downstreamCollector)            | reduces the values in each partition according to downstreamCollector                                                                                         |                                     |                                          |
 | counting()                                                | Counts number of elements                                                                                                                                     | Long                                |                                          |
 | minBy(comparator)                                         |                                                                                                                                                               | Optional minimal element            |                                          |
-|                                                           |                                                                                                                                                               |                                     |                                          |
+| mapping(Function f, Collector dc)                         | Adds another level of collectors.<br>Map first.Then pass to downstream.                                                                                       | Collector                           |                                          |
 
 * I can collect into Long, String, Double, Optional<T>, Map, List, Set...
-
+* Function.identity() means s -> s.
 &nbsp;
 
 &nbsp;

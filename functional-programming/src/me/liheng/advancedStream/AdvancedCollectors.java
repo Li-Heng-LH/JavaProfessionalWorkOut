@@ -7,7 +7,7 @@ import java.util.stream.Stream;
 public class AdvancedCollectors {
 
     public static void main(String[] args) {
-        minBy();
+        mapping();
     }
 
     //Only applicable to Stream<String>
@@ -121,5 +121,36 @@ public class AdvancedCollectors {
         Stream<String> ohMy = Stream.of("lions", "tigers", "bears");
         ohMy.collect(Collectors.minBy(Comparator.naturalOrder()))
                 .ifPresent(System.out::println);
+    }
+
+    private static void mapping() {
+        Stream<String> ohMy = Stream.of("lions", "tigers", "bears");
+        //groupingBy then mapping
+        //to get the first letter of the first animal alphabetically of each length
+        //downstream collector: a collector which will accept mapped values
+        // step 1: {5=[lions, bears], 6=[tigers]}
+        // step 2: {5=[l, b], 6=[t]}
+        // step 3: {5=Optional[b], 6=Optional[t]}
+        Map<Integer, Optional<Character>> map = ohMy.collect(
+                Collectors.groupingBy(
+                        String::length,
+                        Collectors.mapping(
+                                (String s ) -> s.charAt(0),
+                                Collectors.minBy(Comparator.naturalOrder())
+                        )));
+        System.out.println(map); // {5=Optional[b], 6=Optional[t]}
+
+
+        // step 1: {5=[lions, bears], 6=[tigers]}
+        // step 2: {5=[lions123, bears123], 6=[tigers123]}
+        // step 3: {5=8.0, 6=9.0}
+        ohMy = Stream.of("lions", "tigers", "bears");
+        Map<Integer, Double> map2 = ohMy.collect(Collectors.groupingBy(
+                        String::length,
+                        Collectors.mapping(
+                                (String s ) -> s + "123",
+                                Collectors.averagingInt(String::length)
+                        )));
+        System.out.println(map2); // {5=8.0, 6=9.0}
     }
 }
