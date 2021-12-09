@@ -340,7 +340,16 @@
 | mapping(Function f, Collector dc)                         | Adds another level of collectors.<br>Map first.Then pass to downstream.                                                                                       | Collector                           |                                          |
 
 * I can collect into Long, String, Double, Optional<T>, Map, List, Set...
+&nbsp;
+
+### Misc ###
 * Function.identity() means s -> s.
+* Exception: “stream has already been operated upon or closed.”
+* Reductions use all elements of the stream in determining the result.   
+  The reductions : count(), max(), min(), reduce(), and collect().  
+  The collect() method is a mutable reduction.
+* collect() method needs to take in either 1 Collector, or 3 parameters. 
+
 &nbsp;
 
 &nbsp;
