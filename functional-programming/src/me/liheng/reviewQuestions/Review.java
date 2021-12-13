@@ -1,11 +1,14 @@
 package me.liheng.reviewQuestions;
 
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Review {
 
     public static void main(String[] args) {
-        preVSpostIncrement();
+        partitioningVSGrouping();
     }
 
     private static void question1() {
@@ -38,5 +41,24 @@ public class Review {
         int s = ++t;
         System.out.println(r); // 88
         System.out.println(s); // 90
+    }
+
+    private static void partitioningVSGrouping() {
+        Stream<String> s = Stream.empty();
+        Stream<String> s2 = Stream.empty();
+
+        Map<Boolean, List<String>> p = s.collect(
+                Collectors.partitioningBy(x -> x.startsWith("A"))
+        );
+
+        Map<Boolean, List<String>> q = s2.collect(
+                Collectors.groupingBy(x -> x.startsWith("A"))
+        );
+
+        System.out.println(p + " " + q);  // {false=[], true=[]} {}
+
+        //partitioningBy() operation always returns a map with two Boolean keys,
+        //even if there are no corresponding values.
+        //By contrast, groupingBy() returns only keys that are actually needed.
     }
 }

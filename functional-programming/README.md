@@ -349,7 +349,10 @@
   The reductions : count(), max(), min(), reduce(), and collect().  
   The collect() method is a mutable reduction.
 * collect() method needs to take in either 1 Collector, or 3 parameters. 
-
+* partitioningBy() operation always returns a map with two Boolean keys,   
+  even if there are no corresponding values.   
+  By contrast, groupingBy() returns only keys that are actually needed.
+  
 &nbsp;
 
 &nbsp;
