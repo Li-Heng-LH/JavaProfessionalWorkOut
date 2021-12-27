@@ -345,13 +345,16 @@
 ### Misc ###
 * Function.identity() means s -> s.
 * Exception: “stream has already been operated upon or closed.”
-* Reductions use all elements of the stream in determining the result.   
+* **Reductions are a special type of terminal operation where all of the contents of the stream are combined into a single primitive or Object**.  
+  Reductions use all elements of the stream in determining the result.   
   The reductions : count(), max(), min(), reduce(), and collect().  
   The collect() method is a mutable reduction.
 * collect() method needs to take in either 1 Collector, or 3 parameters. 
 * partitioningBy() operation always returns a map with two Boolean keys,   
   even if there are no corresponding values.   
   By contrast, groupingBy() returns only keys that are actually needed.
+* Primitive streams and optionals: **double**, **int**, and **long**  
+  There is one exception, which is BooleanSupplier --> boolean
   
 &nbsp;
 
