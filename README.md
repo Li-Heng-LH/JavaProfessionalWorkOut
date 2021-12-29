@@ -8,6 +8,7 @@ Work out examples while studying for Java Professional Cert.
 * [Design principles and patterns](/design-patterns/README.md)
 * [Generics and collections](/generics-and-collections/README.md)
 * [Functional programming](/functional-programming/README.md)
+* [Concurrency](/concurrency/README.md)
 * [Java I/O](/javaIO/README.md)
 
 
