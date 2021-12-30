@@ -33,6 +33,54 @@
 
 &nbsp;
 
+### Thread VS Runnable ###
+* Both in `java.lang`
+* **Functional Interface** Runnable
+* **Class** Thread 
+* Thread **implements** Runnable
+
+* The Runnable interface should be implemented by any class   
+  whose instances are intended to be executed by a thread.
+* `thread.start()`  
+  Causes this thread to begin execution, JVM calls the run method of this thread.
+* `thread.run()`  
+  If this thread was constructed using a separate Runnable run object, then that Runnable object's run method is called;   
+  otherwise, this method does nothing and returns.  
+  Subclasses of Thread should override this method.
+  
+* Constructor of Thread:   
+  `Thread(Runnable target)`  
+  run() method of target is invoked when this thread is started.
+
+&nbsp;
+
+### Creating a Thread ###
+* Executing a task with Thread is a two-step process:  
+  1. define the Thread with the corresponding task to be done
+  2. start the task by using the `Thread.start()`
+
+* Two ways to define a task:  
+  1. Provide a Runnable object or lambda expression to the Thread constructor `Thread(Runnable target)`    
+  2. Create a class that extends Thread and overrides the `run()` method.
+
+* Two ways to define a task in short:
+  1. **Implementing Runnable**
+  2. **Extending Thread**  
+
+* `thread.start()` vs `thread.run()`  
+  `thread.run()` will not execute a task on a separate processing thread.   
+  Instead, the thread that made the `run()` call will be used to execute the task.
+
+* Which way to create a thread?   
+  * In general, you should extend the Thread class only under very specific circumstances,   
+  such as when you are creating your own priority-based thread.
+  * In most situations, you should implement the Runnable interface rather than extend the Thread class.
+  * Implementing Runnable is often a better object-oriented design practice since   
+    it separates the task being performed from the Thread object performing it. 
+  * Extending Thread does not allow you to extend any other class, whereas implementing Runnable lets you extend another class.
+
+&nbsp;
+
 &nbsp;
 ----
 ### Useful links ###
