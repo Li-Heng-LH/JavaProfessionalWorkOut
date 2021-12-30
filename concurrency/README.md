@@ -81,6 +81,12 @@
 
 &nbsp;
 
+### Polling with Sleep ###
+* Polling is the process of intermittently checking data at some fixed interval.
+* `Thread.sleep()` method requests **current** thread of execution to rest for a specified number of milliseconds. 
+
+&nbsp;
+
 &nbsp;
 ----
 ### Useful links ###
