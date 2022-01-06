@@ -42,7 +42,7 @@
 * The Runnable interface should be implemented by any class   
   whose instances are intended to be executed by a thread.
 * `thread.start()`  
-  Causes this thread to begin execution, JVM calls the run method of this thread.
+  Causes this thread to begin execution, JVM calls the `run` method of this thread.
 * `thread.run()`  
   If this thread was constructed using a separate Runnable run object, then that Runnable object's run method is called;   
   otherwise, this method does nothing and returns.  
@@ -84,6 +84,23 @@
 ### Polling with Sleep ###
 * Polling is the process of intermittently checking data at some fixed interval.
 * `Thread.sleep()` method requests **current** thread of execution to rest for a specified number of milliseconds. 
+
+&nbsp;
+
+### Little Summary ###
+* `thread.start()` will start in a separate thread, and calls `thread.run()`, which calls `runnable.run()`
+* Simply calling `thread.run()` will not start a separate thread.
+
+&nbsp;
+
+### ExecutorService ###
+* In Concurrency API, `ExecutorService` creates and manages threads for you.
+* Recommended to use this framework anytime you need to create and execute a separate task, 
+even if you need only a single thread.
+* `Executors.newSingleThreadExecutor()` :  
+  Creates an Executor that uses a single worker thread.   
+  Tasks are guaranteed to execute sequentially,   
+  and no more than one task will be active at any given time.
 
 &nbsp;
 
