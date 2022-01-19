@@ -94,13 +94,27 @@
 &nbsp;
 
 ### ExecutorService ###
+* Concurrency API: `java.util.concurrent`. 
 * In Concurrency API, `ExecutorService` creates and manages threads for you.
 * Recommended to use this framework anytime you need to create and execute a separate task, 
 even if you need only a single thread.
-* `Executors.newSingleThreadExecutor()` :  
-  Creates an Executor that uses a single worker thread.   
-  Tasks are guaranteed to execute sequentially,   
-  and no more than one task will be active at any given time.
+
+&nbsp;
+
+### ExecutorService, Executors, Executor ### 
+* `Executors.newSingleThreadExecutor()` creates an `ExecutorService`. 
+* `executorService.execute(Runnable)` executes a given task sometime in the future. 
+* `interface Executor`
+* `interface ExecutorService extends Executor`
+
+&nbsp;
+
+### Executors.newSingleThreadExecutor() ###
+* `Executors.newSingleThreadExecutor()`:  
+  - Creates an Executor that uses a single worker thread.   
+  - Tasks added are guaranteed to execute sequentially, and no more than one task will be active at any given time.
+  - 2 threads running: main() thread and ExecutorService thread. 
+  - ExecutorService thread will run the added tasks sequentially. 
 
 &nbsp;
 
