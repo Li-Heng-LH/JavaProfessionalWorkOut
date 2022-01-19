@@ -20,6 +20,12 @@
   E.g: garbage-collection thread
 * User-defined thread
 
+* **User threads** are high-priority threads. The JVM will wait for any user thread to complete its task before terminating it.
+* A **daemon thread** is a thread that does not prevent the JVM from exiting when the program finishes but the thread is still running. 
+* Daemon threads are low-priority threads. 
+* An example for a daemon thread is the garbage collection. 
+* Daemon threads are not recommended for I/O tasks. 
+
 &nbsp;
 
 ### Concurrency ###
@@ -115,6 +121,20 @@ even if you need only a single thread.
   - Tasks added are guaranteed to execute sequentially, and no more than one task will be active at any given time.
   - 2 threads running: main() thread and ExecutorService thread. 
   - ExecutorService thread will run the added tasks sequentially. 
+
+&nbsp;
+
+### Shutting Down a Thread Executor ###
+* After using a thread executor, important to call the `shutdown()` method. 
+* A thread executor creates a non-daemon thread on the first task that is executed, 
+* failing to call shutdown() will result in your application never terminating. 
+* ExecutorService life cycle:   
+  - New Thread Executor
+  - Active : Accepts New Tasks, Executes Tasks
+  - Shutting Down: Rejects New Tasks, Executes Tasks
+  - Shutdown : Rejects New Tasks, No Tasks Running
+* Calling `shutdown()` will transit into Shutting Down state. 
+* Good practice to use try-finally to shut down ExecutorService.
 
 &nbsp;
 
