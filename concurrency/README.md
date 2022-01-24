@@ -110,6 +110,13 @@ even if you need only a single thread.
 ### ExecutorService, Executors, Executor ### 
 * `Executors.newSingleThreadExecutor()` creates an `ExecutorService`. 
 * `executorService.execute(Runnable)` executes a given task sometime in the future. 
+* `execute` method takes in a Runnable lambda expression or instance and   
+  completes the task **asynchronously**.
+* Return type of `execute` is void ->   
+  * it does not tell us anything about the result of the task
+  * fire-and-forget
+  * once it is submitted, the results are not directly available to the calling thread
+
 * `interface Executor`
 * `interface ExecutorService extends Executor`
 
@@ -135,6 +142,11 @@ even if you need only a single thread.
   - Shutdown : Rejects New Tasks, No Tasks Running
 * Calling `shutdown()` will transit into Shutting Down state. 
 * Good practice to use try-finally to shut down ExecutorService.
+
+&nbsp;
+
+### Submitting Tasks ###
+* 
 
 &nbsp;
 

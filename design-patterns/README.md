@@ -12,6 +12,7 @@ Walk through of _Oracle Certified Professional Java SE 8 Programmer II Study Gui
 * parentheses can be omitted only if there is exactly one parameter and the data type is not specified
 * single expression as the body --> no need {}
 * one or more statements in body --> need {}
+* Note: An expression can return `void`. In that case no need to have {}. For example, `System.out.println()`.
 
 
 * the data types for the input parameters of a lambda expression are optional, but
