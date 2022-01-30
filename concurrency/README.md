@@ -66,8 +66,8 @@
   2. start the task by using the `Thread.start()`
 
 * Two ways to define a task:  
-  1. Provide a Runnable object or lambda expression to the Thread constructor `Thread(Runnable target)`    
-  2. Create a class that extends Thread and overrides the `run()` method.
+  1. Provide a `Runnable` object or lambda expression to the Thread constructor `Thread(Runnable target)`    
+  2. Create a class that extends `Thread` and overrides the `run()` method.
 
 * Two ways to define a task in short:
   1. **Implementing Runnable**
@@ -146,9 +146,18 @@ even if you need only a single thread.
 &nbsp;
 
 ### Submitting Tasks ###
-* 
+* In `ExecutorService`:  
+  * `void execute(Runnable command)`
+  * `Future<?> submit(Runnable task)`
+  * `<T> Future<T> submit(Callable<T> task)`
+* `execute()` supports only `Runnable`,   
+  while `submit()` supports both `Runnable` and `Callable`.
+* Therefore in practice, we prefer `submit()` over `execute()`,   
+  even if we do not store the reference for the returned Future.   
+  We recommend submit() over execute() whenever possible. 
 
 &nbsp;
+
 
 &nbsp;
 ----
