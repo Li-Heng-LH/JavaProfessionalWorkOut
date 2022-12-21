@@ -32,6 +32,7 @@ public class StreamSources {
         collectionToStream();
 
         mapToStream();
+
     }
 
     private static void infiniteStream() {

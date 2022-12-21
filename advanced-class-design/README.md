@@ -24,13 +24,13 @@ Walk through of _Oracle Certified Professional Java SE 8 Programmer II Study Gui
 &nbsp;
 
 ### Overloading ###
-* Ignore return type. 
-* Method parameters must vary by **type** and/or **number** and/or **order**.
+* Ignore return currencyType. 
+* Method parameters must vary by **currencyType** and/or **number** and/or **order**.
 * Closest match first: 
-  * Exact match by type
-  * Matching a superclass type
-  * Converting to a larger primitive type
-  * Converting to an autoboxed type
+  * Exact match by currencyType
+  * Matching a superclass currencyType
+  * Converting to a larger primitive currencyType
+  * Converting to an autoboxed currencyType
   * Varargs
   
 &nbsp;
@@ -38,7 +38,7 @@ Walk through of _Oracle Certified Professional Java SE 8 Programmer II Study Gui
 ### Overriding ###
 * Method signature has to be the same.
 * Rules: 
-  * Return type must be the same or a subclass
+  * Return currencyType must be the same or a subclass
   * Access modifier must be the same or more accessible
   * Exceptions must be the same or subclass
   * The methods must not be static --> we cannot override static methods
@@ -63,8 +63,8 @@ before applying an explicit cast.
 &nbsp;
 
 ### Virtual Method Invocation ###
-* Call a method based on the actual type at runtime, instead of variable type at compile time. 
-* But for instance variables, actual type at runtime is not considered. 
+* Call a method based on the actual currencyType at runtime, instead of variable currencyType at compile time. 
+* But for instance variables, actual currencyType at runtime is not considered. 
 
 &nbsp;
 
@@ -77,8 +77,8 @@ For:
 &nbsp;
 
 ### What is null in Java? ###
-* In practice, the programmer can ignore the null type and just 
-* pretend that null is merely a **special literal** that **can be of any reference type**.
+* In practice, the programmer can ignore the null currencyType and just 
+* pretend that null is merely a **special literal** that **can be of any reference currencyType**.
 * null instanceof any Class is false
 * null == any object is false
 * object.equals(null) depends on implementation

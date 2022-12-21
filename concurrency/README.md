@@ -158,6 +158,11 @@ even if you need only a single thread.
 
 &nbsp;
 
+### Interface Future<V> ###
+* where _V_ is the type of the result returned from the get method.
+* Simply put, a Future represents the result of an asynchronous computation.
+
+&nbsp;
 
 &nbsp;
 ----
