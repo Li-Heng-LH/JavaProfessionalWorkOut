@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Snippets {
 
@@ -18,6 +19,9 @@ public class Snippets {
     private void run() {
         System.out.println(filterList(integersSupplier.get()));
         filterList2(integersSupplier.get());
+        System.out.println(reduceString());
+        System.out.println(reduceIntegers(integersSupplier.get()));
+        streamSupplier();
     }
 
     private List<Integer> filterList(List<Integer> integers){
@@ -29,5 +33,22 @@ public class Snippets {
     private void filterList2(List<Integer> integers) {
         integers.removeIf(i -> i <= 5);
         System.out.println(integers);
+    }
+
+    private String reduceString() {
+        return Stream.of("a", "b", "c", "d")
+                .reduce("", String::concat); //Instance method reference
+    }
+
+    private int reduceIntegers(List<Integer> integers) {
+        return integers.stream()
+                .reduce(0, Integer::sum);
+    }
+
+    private void streamSupplier() {
+        Supplier<Stream<Integer>> integersStreamSupplier =
+                () -> IntStream.rangeClosed(1, 10).boxed();
+        System.out.println(integersStreamSupplier.get().count());
+        System.out.println(integersStreamSupplier.get().count());
     }
 }
