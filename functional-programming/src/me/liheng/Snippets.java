@@ -1,6 +1,7 @@
 package me.liheng;
 
 import java.util.List;
+import java.util.Map;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -22,6 +23,7 @@ public class Snippets {
         System.out.println(reduceString());
         System.out.println(reduceIntegers(integersSupplier.get()));
         streamSupplier();
+        System.out.println(toMapCollector());
     }
 
     private List<Integer> filterList(List<Integer> integers){
@@ -50,5 +52,13 @@ public class Snippets {
                 () -> IntStream.rangeClosed(1, 10).boxed();
         System.out.println(integersStreamSupplier.get().count());
         System.out.println(integersStreamSupplier.get().count());
+    }
+
+    private Map<Integer, String> toMapCollector() {
+        return Stream.of("a", "ab", "ab", "cd", "efg")
+                .collect(Collectors.toMap(String::length,
+                        s -> s,
+                        (a, b) -> a + ", " + b  //BinaryOperator mergeFunction
+                ));
     }
 }
