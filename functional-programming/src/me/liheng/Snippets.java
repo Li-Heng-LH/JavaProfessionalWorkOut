@@ -24,6 +24,7 @@ public class Snippets {
         System.out.println(reduceIntegers(integersSupplier.get()));
         streamSupplier();
         System.out.println(toMapCollector());
+        System.out.println(peek());
     }
 
     private List<Integer> filterList(List<Integer> integers){
@@ -60,5 +61,11 @@ public class Snippets {
                         s -> s,
                         (a, b) -> a + ", " + b  //BinaryOperator mergeFunction
                 ));
+    }
+
+    private long peek() {
+        return Stream.of("abc", "efg")
+                .peek(System.out::println)  //peek is intermediate
+                .count();
     }
 }
