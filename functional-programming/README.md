@@ -104,6 +104,33 @@
 
 &nbsp; 
 
+### Benefits of Optional ###
+* As a return type to indicate possibility of returning null
+* Avoid manipulating with null directly
+* Handle null in a declarative way, functional programming style.
+
+&nbsp;
+
+### Optional ###
+* You can view `Optional` as a single-value **container** that either contains a value or doesn't.
+* `Optional.of()` CANNOT take in null. 
+* `Optional.ofNullable()` can take in null.
+* `optional.ifPresent()` takes in a consumer that consumes the value contained in the optional. 
+  * if the optional is empty, do nothing, just like empty stream.
+* `optional.filter()` takes in a predicate that tests the value, returns Optional.
+  * if the optional is empty, return empty optional, just like empty stream.
+* `optional.map()` takes in function that applies on the value, returns Optional.
+  * if the optional is empty, return empty optional, just like empty stream.
+* `optional.flatMap()` takes in Optional-bearing mapping function, returns 
+the result of applying the Optional-bearing mapping function. 
+
+|          | **optional.map**                             | **optional.flatMap**              |
+|----------|----------------------------------------------|-----------------------------------|
+| takes in | mapping function                             | Optional-bearing mapping function |
+| returns  | optional wrapping result of mapping function | result of mapping function        |
+
+&nbsp;
+
 ### Optional static methods ###
 * `Optional<Double>`
 * `Optional.empty()`
