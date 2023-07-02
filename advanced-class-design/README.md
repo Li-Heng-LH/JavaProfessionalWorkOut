@@ -206,6 +206,13 @@ Can just: `PublicInner publicInner = new PublicInner();`
 
 &nbsp;
 
+### Helper vs. Utility Classes ###
+* Helper classes can be instantiated. Utility classes are final and have private constructors. 
+* Helper classes can have instance variables. Utility classes only have static variables and methods.
+* Helper classes package scope. Utility classes global scope.
+
+&nbsp;
+
 &nbsp;
 ----
 ### Useful links ###

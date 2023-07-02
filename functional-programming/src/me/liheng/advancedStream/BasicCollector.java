@@ -9,6 +9,7 @@ public class BasicCollector {
 
     public static void main(String[] args) {
         toCollection();
+        self_implemented_combiner();
     }
 
     //Collector.of
@@ -51,5 +52,13 @@ public class BasicCollector {
         LinkedList <String> linkedList = Stream.of("a", "b", "c")
                 .collect(Collectors.toCollection(LinkedList::new));
         System.out.println(linkedList);
+    }
+
+    private static void self_implemented_combiner() {
+        List<Integer> list = Stream.of(1, 2, 3, 4, 5, 6)
+                .collect(ArrayList::new,  //Supplier
+                        List::add,        //accumulator
+                        (l1, l2) -> l2.forEach(l1::add));  //combiner
+        System.out.println(list);
     }
 }
