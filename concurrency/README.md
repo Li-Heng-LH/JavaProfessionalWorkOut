@@ -1,5 +1,5 @@
 # Concurrency
-[Cheat Sheet](/CheatSheet.md)
+[Cheat Sheet](./CheatSheet.md)
 
 ## Some Learning Notes ##
 
