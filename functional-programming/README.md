@@ -1,5 +1,5 @@
 # Functional Programming 
-
+[Cheat Sheet](/cheatSheet.md)
 
 ## Some Learning Notes ##
 
