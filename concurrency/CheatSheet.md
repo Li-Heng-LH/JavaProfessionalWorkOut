@@ -47,3 +47,6 @@ Interfaces:
 
 &nbsp;
 
+* From Executors we get ExecutorService,   
+  From ExecutorService we call submit,  
+  From submit we get a Future.

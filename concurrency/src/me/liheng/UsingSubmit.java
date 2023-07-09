@@ -1,6 +1,6 @@
 package me.liheng;
 
-public class UsingFuture {
+public class UsingSubmit {
 
     public static void main(String[] args) {
 
