@@ -28,4 +28,22 @@ Interfaces:
 
 &nbsp;
 
+| Runnable   | Callable                   | Supplier |
+|------------|----------------------------|----------|
+| void run() | V call () throws Exception | T get () |
+
+&nbsp;
+
+
+| Future methods                     |
+|------------------------------------|
+| V get()                            |
+| V get(long timeout, TimeUnit unit) |
+| boolean isDone()                   |
+| boolean isCancelled()              |
+| boolean cancel()                   |
+
+* Future from submitting a Runnable returns null when get. 
+
+&nbsp;
 
