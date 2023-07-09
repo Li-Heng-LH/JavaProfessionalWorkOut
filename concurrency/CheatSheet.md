@@ -18,10 +18,14 @@ Interfaces:
 
 &nbsp;
 
-Executor method: 
-* void execute(Runnable command);
-
-ExecutorService methods: 
-* 
+| Executor method                | ExecutorService methods                                                                              |
+|--------------------------------|------------------------------------------------------------------------------------------------------|
+| void execute(Runnable command) | void execute(Runnable command)                                                                       |
+|                                | Future<?> submit(Runnable task)                                                                      |
+|                                | Future<T> submit(Callable<T> task)                                                                   |
+|                                | List<Future<T>> invokeAll(Collection<? extends Callable<T>> tasks) throws InterruptedException       |
+|                                | T invokeAny(Collection<? extends Callable<T>> tasks) throws InterruptedException, ExecutionException |
 
 &nbsp;
+
+
