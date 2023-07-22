@@ -28,6 +28,8 @@ Interfaces:
 
 &nbsp;
 
+Functional Interfaces:  
+
 | Runnable   | Callable                   | Supplier |
 |------------|----------------------------|----------|
 | void run() | V call () throws Exception | T get () |
@@ -44,6 +46,7 @@ Interfaces:
 | boolean cancel()                   |
 
 * Future from submitting a Runnable returns null when get. 
+* Future is NOT a functional interface. 
 
 &nbsp;
 
