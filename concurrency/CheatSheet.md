@@ -14,7 +14,13 @@
 &nbsp;
 
 Interfaces: 
-* Runnable, Executor, ExecutorService, Future, Callable
+* Runnable 
+* Executor 
+* ExecutorService
+* ScheduledExecutorService
+* Future
+* ScheduledFuture
+* Callable
 
 &nbsp;
 
