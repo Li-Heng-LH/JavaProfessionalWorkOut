@@ -167,4 +167,6 @@ even if you need only a single thread.
 &nbsp;
 ----
 ### Useful links ###
-* []()
+* [What is the purpose of ScheduledFuture.get() method 
+if is retrieved from the scheduleWithFixedDelay/scheduleAtFixedRate method](
+https://stackoverflow.com/questions/25049021/what-is-the-purpose-of-scheduledfuture-get-method-if-is-retrieved-from-the-sch)
