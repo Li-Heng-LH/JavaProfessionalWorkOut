@@ -14,13 +14,13 @@
 &nbsp;
 
 Interfaces: 
-* Runnable 
+* Runnable (Functional Interface)
 * Executor 
 * ExecutorService
 * ScheduledExecutorService
 * Future
 * ScheduledFuture
-* Callable
+* Callable (Functional Interface)
 
 &nbsp;
 
