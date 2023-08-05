@@ -59,3 +59,12 @@ Functional Interfaces:
 * From Executors we get ExecutorService,   
   From ExecutorService we call submit,  
   From submit we get a Future.
+
+* ScheduledFuture extends Future
+
+* Executor --> ExecutorService --> ScheduledExecutorService  
+  execute --> submit --> schedule
+  
+* Blocking operations: 
+  * Future.get()
+  * ExecutorService.invokeAll
