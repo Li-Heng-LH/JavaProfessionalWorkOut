@@ -62,8 +62,14 @@ Functional Interfaces:
 
 * ScheduledFuture extends Future
 
-* Executor --> ExecutorService --> ScheduledExecutorService  
-  execute --> submit --> schedule
+*
+| Executor        | ExecutorService         | ScheduledExecutorService  |
+|-----------------|-------------------------|---------------------------|
+| execute command | execute command         | execute command           |
+|                 | submit command/callable | submit command/callable   |
+|                 | invoke callables        | invoke callables          |
+|                 |                         | schedule command/callable |
+|                 |                         | scheduleAt command        |
   
 * Blocking operations: 
   * Future.get()
