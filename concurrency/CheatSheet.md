@@ -74,5 +74,12 @@ Functional Interfaces:
 * Blocking operations: 
   * Future.get()
   * ExecutorService.invokeAll
-  
+* Non-Blocking operations: 
+  * execute
+  * submit
+  * schedule
+
+* After execute, submit, schedule, need to have main thread running to wait for threads. 
+* using scheduleAtFixedRate with newScheduledThreadPool, an available thread will pick up 
+the next scheduled task. 
 
