@@ -20,8 +20,13 @@ public class BlockingNonBlocking {
     }
 
     static void test() throws Exception {
-        service = Executors.newScheduledThreadPool(3);
+        service = Executors.newSingleThreadScheduledExecutor();
         service.scheduleAtFixedRate(() -> {
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             System.out.println("thread");
         }, 0, 2, TimeUnit.SECONDS);
     }

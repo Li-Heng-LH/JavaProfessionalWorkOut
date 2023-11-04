@@ -124,7 +124,7 @@ even if you need only a single thread.
 
 ### Executors.newSingleThreadExecutor() ###
 * `Executors.newSingleThreadExecutor()`:  
-  - Creates an Executor that uses a single worker thread.   
+  - Creates an ExecutorService that uses a single worker thread.   
   - Tasks added are guaranteed to execute sequentially, and no more than one task will be active at any given time.
   - 2 threads running: main() thread and ExecutorService thread. 
   - ExecutorService thread will run the added tasks sequentially. 
