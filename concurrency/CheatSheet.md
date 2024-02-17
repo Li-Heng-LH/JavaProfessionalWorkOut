@@ -83,3 +83,8 @@ Functional Interfaces:
 * using scheduleAtFixedRate with newScheduledThreadPool, an available thread will pick up 
 the next scheduled task. 
 
+### Atomic ###
+* single unit of execution
+* no interference by another thread
+
+

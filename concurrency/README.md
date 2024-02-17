@@ -164,6 +164,11 @@ even if you need only a single thread.
 
 &nbsp;
 
+### Atomic Operation ###
+* operation carried out 
+  * as a single unit of execution
+  * without any interference by another thread
+
 &nbsp;
 ----
 ### Useful links ###
