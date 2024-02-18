@@ -86,5 +86,9 @@ the next scheduled task.
 ### Atomic ###
 * single unit of execution
 * no interference by another thread
+* Example: Atomic increment operator: 
+  * performed the read and write of the variable as a single operation, 
+  * not allowing any other threads to access the variable during the operation.
+* 
 
 
