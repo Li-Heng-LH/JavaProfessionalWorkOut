@@ -91,4 +91,9 @@ the next scheduled task.
   * not allowing any other threads to access the variable during the operation.
 * 
 
+### Monitor / Lock ###
+* A monitor/lock is a structure that supports mutual exclusion, 
+* (property that at most one thread is executing a particular segment of code at a given time)
+* In Java, any Object can be used as a monitor, along with the `synchronized` keyword
+
 
