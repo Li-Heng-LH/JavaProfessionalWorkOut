@@ -4,6 +4,11 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class SheepManager {
+
+    /**
+     * may have repetition,
+     * for example: 1 2 2 ...
+     */
     private int sheepCount = 0;
     private void incrementAndReport() {
         sheepCount = sheepCount + 1;

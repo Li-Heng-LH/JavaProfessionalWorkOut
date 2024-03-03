@@ -6,6 +6,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class AtomicSheepManager {
 
+    /**
+     * No repetition
+     * But may not be ordered,
+     * for example: 1 4 3 2 ...
+     */
     private final AtomicInteger sheepCount = new AtomicInteger(0);
     private void incrementAndReport() {
         System.out.print(sheepCount.incrementAndGet() + " ");

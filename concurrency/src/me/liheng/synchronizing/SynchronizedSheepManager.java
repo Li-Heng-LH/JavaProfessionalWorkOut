@@ -5,6 +5,9 @@ import java.util.concurrent.Executors;
 
 public class SynchronizedSheepManager {
 
+    /**
+     * ordered
+     */
     private int sheepCount = 0;
     private void incrementAndReport() {
         synchronized(this) {
