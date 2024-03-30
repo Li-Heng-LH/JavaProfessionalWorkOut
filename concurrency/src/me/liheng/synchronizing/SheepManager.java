@@ -6,6 +6,7 @@ import java.util.concurrent.Executors;
 public class SheepManager {
 
     /**
+     * Race condition
      * may have repetition,
      * for example: 1 2 2 ...
      */

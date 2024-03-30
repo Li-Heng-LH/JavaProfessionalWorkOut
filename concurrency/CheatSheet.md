@@ -83,17 +83,28 @@ Functional Interfaces:
 * using scheduleAtFixedRate with newScheduledThreadPool, an available thread will pick up 
 the next scheduled task. 
 
+### Race Conditions
+* the unexpected result of two tasks executing at the same time
+is referred to as a race condition. 
+
 ### Atomic ###
 * single unit of execution
 * no interference by another thread
 * Example: Atomic increment operator: 
   * performed the read and write of the variable as a single operation, 
   * not allowing any other threads to access the variable during the operation.
-* 
 
 ### Monitor / Lock ###
 * A monitor/lock is a structure that supports mutual exclusion, 
 * (property that at most one thread is executing a particular segment of code at a given time)
 * In Java, any Object can be used as a monitor, along with the `synchronized` keyword
+
+### The different levels to address race conditions ###
+| Solution       | Effect             |
+|----------------|--------------------|
+| Race condition | repetition,  1 2 2 |
+| Atomic         | not ordered, 2 1 3 |
+| synchronized   | ordered            |
+
 
 
