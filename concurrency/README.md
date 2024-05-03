@@ -171,6 +171,30 @@ even if you need only a single thread.
 
 &nbsp;
 
+### Thread states
+![img.png](img/thread-states.png)
+* New: instance created, but the start() method has not been invoked. 
+  * Not alive.
+* Runnable: 
+  * start() method invoked.
+  * Eligible to be scheduled.
+  * A thread can also return to this Runnable state after: 
+    * Running, or,
+    * coming back from blocked, or
+    * waiting, or
+    * sleeping
+  * Alive
+* Running: only one way to get to this state:  
+  scheduler chooses a thread from the runnable pool
+* 3 states not eligible to run (still alive) :
+  * waiting: caused by code 
+  * blocked: waiting for resource
+  * sleeping: caused by code
+  * They need to return to Runnable state first before Running
+* Dead: when run() method completes
+
+&nbsp;
+
 ### sleep()
 * Just because a thread's sleep() expires and wakes up, does not mean it will return to running!  
   when a thread wakes up, it simply goes back to the **runnable** state. 
@@ -182,6 +206,10 @@ even if you need only a single thread.
   no thread can put another thread to sleep
 * Thread.sleep() puts the currently running thread to sleep.
 
+* &nbsp;
+
+### yield()
+* 
 
 &nbsp;
 ----
