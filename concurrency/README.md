@@ -170,6 +170,20 @@ even if you need only a single thread.
   * without any interference by another thread
 
 &nbsp;
+
+### sleep()
+* Just because a thread's sleep() expires and wakes up, does not mean it will return to running!  
+  when a thread wakes up, it simply goes back to the **runnable** state. 
+* The time specified in sleep() is the **minimum** duration in which the thread won't run,  
+  but it is not the exact duration in which the thread won't run. 
+* So cannot rely on the sleep() method to build a perfectly accurate timer. 
+
+* sleep() is a **static** method  
+  no thread can put another thread to sleep
+* Thread.sleep() puts the currently running thread to sleep.
+
+
+&nbsp;
 ----
 ### Useful links ###
 * [What is the purpose of ScheduledFuture.get() method 

@@ -107,4 +107,9 @@ is referred to as a race condition.
 | synchronized   | ordered            |
 
 
-
+### synchronized 
+* synchronized keyword can be used on different levels:
+  1. Instance methods
+  2. Static methods
+  3. Code blocks
+* Monitor object: 
