@@ -70,16 +70,8 @@ Functional Interfaces:
 |                 | invoke callables        | invoke callables          |
 |                 |                         | schedule command/callable |
 |                 |                         | scheduleAt command        |
-  
-* Blocking operations: 
-  * Future.get()
-  * ExecutorService.invokeAll
-* Non-Blocking operations: 
-  * execute
-  * submit
-  * schedule
 
-* After execute, submit, schedule, need to have main thread running to wait for threads. 
+* Yes the main thread will not wait for other threads. But JVM will finish all threads.
 * using scheduleAtFixedRate with newScheduledThreadPool, an available thread will pick up 
 the next scheduled task. 
 

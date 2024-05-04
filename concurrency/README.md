@@ -216,6 +216,14 @@ even if you need only a single thread.
 * Thread.yield() will not cause thread to go to waiting/blocked/sleeping state.
 
 &nbsp;
+
+### join()
+* instance method
+* 
+
+&nbsp;
+
+&nbsp;
 ----
 ### Useful links ###
 * [What is the purpose of ScheduledFuture.get() method 
