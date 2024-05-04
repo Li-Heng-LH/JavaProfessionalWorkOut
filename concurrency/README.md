@@ -206,10 +206,14 @@ even if you need only a single thread.
   no thread can put another thread to sleep
 * Thread.sleep() puts the currently running thread to sleep.
 
-* &nbsp;
+&nbsp;
 
 ### yield()
-* 
+* a **static** method
+* supposed to make the currently Running thread back to Runnable state,  
+  to allow other threads of the same priority to get their turn.
+* However, there is no guarantee that the yielding thread will not be chosen again over all others.
+* Thread.yield() will not cause thread to go to waiting/blocked/sleeping state.
 
 &nbsp;
 ----
