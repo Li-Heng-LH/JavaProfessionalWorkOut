@@ -116,4 +116,7 @@ is referred to as a race condition.
   * JVM knows that this thread already has the lock for this object,   
     so this thread is free to call other synchronized methods on the same object, using the lock the thread already has.
   * If a thread goes to sleep, it holds any locks it has. It does not release any lock. 
+#### synchronized block
+* when we synchronize a block of code, we can specify which object's lock we want to use as the lock.
+
 
