@@ -132,6 +132,16 @@ public static int getCount() {
     }
 }
 ```
+#### blocked state
+* when a thread tires to enter a synchronized method and the lock is already taken,  
+  the thread is said to be blocked on the object's lock. 
+* the thread goes into a kind of pool for that object and sits there until the lock is released,   
+  and the thread can become runnable/running again.
+* Just because the lock is released does not mean any particular thread will get it   
+  as there may be several other threads waiting for the same lock.
+#### General rule of thumb
+* Access to static fields should be done using static synchronized methods
+* Access to non-static fields should be done using non-static synchronized methods
 
-
-
+### "Thread-safe" classes
+* 
