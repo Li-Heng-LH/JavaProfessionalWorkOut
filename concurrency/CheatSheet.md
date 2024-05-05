@@ -104,4 +104,16 @@ is referred to as a race condition.
   1. Instance methods
   2. Static methods
   3. Code blocks
-* Monitor object: 
+* Variables or classes cannot be synchronized
+#### synchronized instance methods
+  * Every object in Java has exactly ONE build-in lock.
+  * when we enter a synchronized instance method, we acquire the lock associated with this object instance.
+  * Acquiring lock = getting the lock = locking the object = locking on the object = synchronizing on the object
+  * Monitor: is the object whose lock we are acquiring
+  * Once a thread acquires the lock on an object, no other thread can enter **any** synchronized method in that class.
+  * A thread can acquire more than 1 lock. 
+  * When a thread has acquired a lock and attempts to call a synchronized method on that same object, no problem. 
+  * JVM knows that this thread already has the lock for this object,   
+    so this thread is free to call other synchronized methods on the same object, using the lock the thread already has.
+  * If a thread goes to sleep, it holds any locks it has. It does not release any lock. 
+
