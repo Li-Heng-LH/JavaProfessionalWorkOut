@@ -118,5 +118,20 @@ is referred to as a race condition.
   * If a thread goes to sleep, it holds any locks it has. It does not release any lock. 
 #### synchronized block
 * when we synchronize a block of code, we can specify which object's lock we want to use as the lock.
+#### synchronized static methods
+```java
+public static synchronized int getCount() {
+    return 1;
+}
+```
+is equivalent to 
+```java
+public static int getCount() {
+    synchronized(MyClass.class ) {
+        return 1;
+    }
+}
+```
+
 
 
