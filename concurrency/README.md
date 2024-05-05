@@ -217,9 +217,9 @@ even if you need only a single thread.
 
 &nbsp;
 
-### join()
+### t.join()
 * instance method
-* 
+* t.join() means "join me to the end of t, so that t must finish before I can run again."
 
 &nbsp;
 
