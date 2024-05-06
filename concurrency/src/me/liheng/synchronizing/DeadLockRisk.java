@@ -1,4 +1,4 @@
-package me.liheng;
+package me.liheng.synchronizing;
 
 /***
  * Thread-1 acquired lock B
