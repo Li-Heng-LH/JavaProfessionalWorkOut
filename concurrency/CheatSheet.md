@@ -144,4 +144,12 @@ public static int getCount() {
 * Access to non-static fields should be done using non-static synchronized methods
 
 ### "Thread-safe" classes
-* 
+* A "thread-safe" class is a class that has been carefully synchronized to protect its data.
+* Many classes in Java API already use synchronization internally to be "thread-safe".  
+
+| StringBuffer  | methods are synchronized when necessary          |
+|---------------|--------------------------------------------------|
+| StringBuilder | a bit faster as it does not bother synchronizing |
+
+
+
