@@ -3,6 +3,14 @@ package me.liheng;
 import java.util.HashSet;
 import java.util.Set;
 
+/***
+ * One possible outcome:
+ * thread-two booking status for seat 1A: true
+ * thread-two booking status for seat 1B: true
+ * thread-one booking status for seat 1A: false
+ * thread-one booking status for seat 1B: false
+ * each seat can only be booked once
+ */
 public class BookShow {
 
     public static void main(String[] args) {
@@ -25,27 +33,34 @@ public class BookShow {
     public void ticketAgentBooks(String seat) {
         Show show = Show.getInstance();
         System.out.println(Thread.currentThread().getName() +
-                " booking status: " +
+                " booking status for seat " +
+                seat +
+                ": " +
                 show.bookSeat(seat));
     }
 }
 
 class Show {
-    private static Show INSTANCE;
-    private final Set<String> availableSeats;
+    private static volatile Show INSTANCE; //shared resource
+
+    //Note that Set is not "thread-safe"
+    private final Set<String> availableSeats; //shared resource
 
     /***
      * If not synchronized, this method may be executed by both threads,
      * defeating the purpose of singleton.
      */
-    public static Show getInstance() {
+    public static synchronized Show getInstance() {
         if (INSTANCE == null) {
             INSTANCE = new Show();
         }
         return INSTANCE;
     }
 
-    public boolean bookSeat(String seat) {
+    /***
+     * Need to synchronize here as Set is not "thread-safe"
+     */
+    public synchronized boolean bookSeat(String seat) {
         return availableSeats.remove(seat);
     }
 
