@@ -223,18 +223,23 @@ even if you need only a single thread.
 
 &nbsp;
 
-#### wait(), notify(), notifyAll() must be called from within a synchronized context, 
-a thread cannot invoke wait() or notify() on an object unless it owns the object's lock. 
-
-### t.wait()
-* instance method
+### obj.wait()
+* Object instance method
 * when a thread executes the wait method of the target object,   
   the thread goes to the waiting list of the target object,  
   it does not execute any further instructions until the notify() method of the target object is called.
-* t.wait() means "put me to the waiting list of t".
-* 
+* obj.wait() means "put me to the waiting list of lock of obj".
+* when the thread waits, it temporarily releases the lock for other threads to use   
+  But it will need it again to continue execution.
 
 &nbsp;
+
+
+#### wait(), notify(), notifyAll() must be called from within a synchronized context,
+a thread cannot invoke wait() or notify() on an object unless it owns the object's lock.
+#### calling wait() will release the lock on the object immediately, 
+#### calling notify() will not release the lock immediately. The thread still needs to exit from synchronized block to release the lock.
+#### after a waiting thread receives the signal to wake up, it will wait until it can re-obtain ownership of the monitor and resumes execution. 
 
 
 &nbsp;
