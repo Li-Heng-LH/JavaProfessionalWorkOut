@@ -195,7 +195,7 @@ even if you need only a single thread.
 
 &nbsp;
 
-### sleep()
+### Thread.sleep()
 * Just because a thread's sleep() expires and wakes up, does not mean it will return to running!  
   when a thread wakes up, it simply goes back to the **runnable** state. 
 * The time specified in sleep() is the **minimum** duration in which the thread won't run,  
@@ -208,7 +208,7 @@ even if you need only a single thread.
 
 &nbsp;
 
-### yield()
+### Thread.yield()
 * a **static** method
 * supposed to make the currently Running thread back to Runnable state,  
   to allow other threads of the same priority to get their turn.
@@ -222,6 +222,20 @@ even if you need only a single thread.
 * t.join() means "join me to the end of t, so that t must finish before I can run again."
 
 &nbsp;
+
+#### wait(), notify(), notifyAll() must be called from within a synchronized context, 
+a thread cannot invoke wait() or notify() on an object unless it owns the object's lock. 
+
+### t.wait()
+* instance method
+* when a thread executes the wait method of the target object,   
+  the thread goes to the waiting list of the target object,  
+  it does not execute any further instructions until the notify() method of the target object is called.
+* t.wait() means "put me to the waiting list of t".
+* 
+
+&nbsp;
+
 
 &nbsp;
 ----
