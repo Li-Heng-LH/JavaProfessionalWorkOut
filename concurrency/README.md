@@ -231,6 +231,24 @@ even if you need only a single thread.
 * obj.wait() means "put me to the waiting list of lock of obj".
 * when the thread waits, it temporarily releases the lock for other threads to use   
   But it will need it again to continue execution.
+* common to find code like this: 
+```java
+synchronized (anotherObject) { //this has the lock of anotherObject 
+    try {
+        anotherObject.wait();
+        //this is added to the waiting list of anotherObject
+        //the thread releases the lock and waits
+        //To continue, the thread needs the lock,
+        //so it may be blocked untill it gets it again.
+    } catch (InterruptedException e) {}
+} 
+```
+* common notify() code: 
+```java
+synchronized(this) {
+    this.notify();
+}
+```
 
 &nbsp;
 

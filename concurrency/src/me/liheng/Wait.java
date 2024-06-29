@@ -15,8 +15,8 @@ class ThreadA extends Thread {
 
         synchronized (b) {
             System.out.println("a acquired lock of b");
-            System.out.println("a waiting for b to complete...");
             try {
+                System.out.println("a waiting for b to complete...");
                 b.wait(); //put me to the waiting list of b; called within synchronized context
                 System.out.println("Total is: " + b.total);
             } catch (InterruptedException e) {
@@ -36,7 +36,7 @@ class ThreadB extends Thread {
             for (int i = 0; i < 100; i++) {
                 total += i;
             }
-            notify(); //called within synchronized context
+            this.notify(); //called within synchronized context
         }
     }
 }
