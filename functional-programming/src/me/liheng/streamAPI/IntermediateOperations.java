@@ -20,6 +20,9 @@ public class IntermediateOperations {
         System.out.println("\nflatMap:");
         flatMap();
 
+        System.out.println("\noneLevelFlatMap:");
+        oneLevelFlatMap();
+
         System.out.println("\nsorted:");
         sorted();
 
@@ -40,14 +43,14 @@ public class IntermediateOperations {
         Stream<String> s = Stream.of("duck", "duck", "duck", "goose");
         s.distinct()
                 .forEach(System.out::println);
-    }
+    } // duck goose
 
     private static void skip() {
         Stream<Integer> s = Stream.iterate(1, n -> n+1);
         s.skip(5)
                 .limit(2)
                 .forEach(System.out::println);
-    }
+    } // 6 7
 
     private static void map() {
         Stream<String> s1 = Stream.of("monkey", "gorilla", "bonobo");
@@ -68,12 +71,25 @@ public class IntermediateOperations {
 
         Stream<List<String>> originalStream = Stream.of(zero, one, two);
         Stream<String> flattenedStream = originalStream.flatMap(l -> l.stream());
-        flattenedStream.forEach(System.out::println);
+        flattenedStream.forEach(System.out::println); //one two three
 
         //Use method reference
         Stream<List<String>> s = Stream.of(zero, one, two);
-        s.flatMap(Collection::stream).forEach(System.out::println);
+        s.flatMap(Collection::stream).forEach(System.out::println); //one two three
     }
+
+    private static void oneLevelFlatMap() {
+        List<List<List<String>>> twoLevelList =
+                Arrays.asList(
+                        Arrays.asList(
+                                Arrays.asList("one", "two"),
+                                Arrays.asList("three", "four"),
+                                Arrays.asList("five", "six")
+                        ));
+        twoLevelList.stream()
+                .flatMap(Collection::stream)
+                .forEach(System.out::println);
+    } // [one, two] [three, four] [five, six]
 
     private static void sorted() {
         Stream<String> s1 = Stream.of("B", "a", "A", "c");
