@@ -4,8 +4,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * main: Executed a task
- * pool-1-thread-1: I have woken
+ main: Executed a task
+ pool-1-thread-1: I have woken..
+ pool-1-thread-1: I have woken again..
  */
 public class AppWaitingForExecutor {
     public static void main(String[] args) {
@@ -19,9 +20,10 @@ public class AppWaitingForExecutor {
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
-                System.out.println(Thread.currentThread().getName() + ": I have woken");
+                System.out.println(Thread.currentThread().getName() + ": I have woken..");
                 try {
                     Thread.sleep(10_000);
+                    System.out.println(Thread.currentThread().getName() + ": I have woken again..");
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }

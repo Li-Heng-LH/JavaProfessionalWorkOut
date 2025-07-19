@@ -4,7 +4,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-public class BlockingNonBlocking {
+public class BlockingNonBlockingScheduledExecutorService {
 
     private static ScheduledExecutorService service = null;
 
@@ -27,7 +27,7 @@ public class BlockingNonBlocking {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println("thread");
+            System.out.println("thread woken..");
         }, 0, 2, TimeUnit.SECONDS);
     }
 }
